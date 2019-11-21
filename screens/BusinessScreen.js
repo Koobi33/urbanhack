@@ -1,33 +1,18 @@
 import React from 'react';
-import {
-  Image,
-  Platform,
-  ScrollView,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-import roles from '../fakeData/roles';
-import { Link } from "../navigation/react-router";
+import { StyleSheet, View, SafeAreaView } from 'react-native';
+import {Text} from 'react-native-ui-kitten';
 import Card from '../components/Card';
-
-const cards = roles.map((item) => {
+import businessScenarios from '../fakeData/businessScenarios';
+const cards = businessScenarios.map((item) => {
   return <Card key={item.id} item={item} />;
 });
-
-export default function HomeScreen() {
-  return (
+const BusinessScreen = () => {
+    return (
       <View style={styles.contentContainer}>
-          {cards}
+       {cards}
       </View>
-  );
-}
-
-HomeScreen.navigationOptions = {
-  header: null,
+    );
 };
-
 
 const styles = StyleSheet.create({
   contentContainer: {
@@ -39,3 +24,5 @@ const styles = StyleSheet.create({
     paddingTop: '15%',
   },
 });
+
+export default BusinessScreen;

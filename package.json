@@ -29,7 +29,8 @@
     "react-native-web": "^0.11.7",
     "react-native-web-swiper": "^2.1.0",
     "react-navigation": "^3.12.0",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.1.2",
+    "react-router-native": "^5.1.2"
   },
   "devDependencies": {
     "babel-preset-expo": "^7.0.0",

@@ -1,68 +1,51 @@
-import { AppLoading } from 'expo';
-import { Asset } from 'expo-asset';
-import * as Font from 'expo-font';
 import React, { useState } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { BottomNavigation, BottomNavigationTab } from 'react-native-ui-kitten';
+import { StyleSheet, View, SafeAreaView } from 'react-native';
 import { mapping, light as lightTheme } from '@eva-design/eva';
 import { ApplicationProvider } from 'react-native-ui-kitten';
+import { Router, Route, Link, Switch } from "./navigation/react-router";
+import {Text} from 'react-native-ui-kitten';
+import HomeScreen from './screens/HomeScreen';
+import BusinessScreen from './screens/BusinessScreen';
+import UserPanel from './screens/UserPanel';
+import TendersParticipating from './screens/TendersParticipating';
 
-import AppNavigator from './navigation/AppNavigator';
+const Integrator = () => <Link to={'/'}><Text>integrator</Text></Link>;
+const Government = () => <Link to={'/'}><Text>government</Text></Link>;
+const User = () => <Link to={'/'}><Text>user</Text></Link>;
+
 
 export default function App(props) {
-  const [isLoadingComplete, setLoadingComplete] = useState(false);
+  const onTabSelect = (selectedIndex) => {
+    const { [index]: selectedRoute } = props.navigation.state.routes;
+    props.navigation.navigate(selectedRoute.routeName);
+  };
 
-  if (!isLoadingComplete && !props.skipLoadingScreen) {
-    return (
+  return (
       <ApplicationProvider mapping={mapping} theme={lightTheme}>
-      <AppLoading
-        startAsync={loadResourcesAsync}
-        onError={handleLoadingError}
-        onFinish={() => handleFinishLoading(setLoadingComplete)}
-      />
+        <Router>
+          <SafeAreaView style={styles.container}>
+            <Switch>
+            <Route exact path="/business" component={BusinessScreen} />
+            <Route exact path="/business/tenders" component={TendersParticipating} />
+            <Route exact path="/integrator" component={Integrator} />
+            <Route exact path="/government" component={Government} />
+            <Route exact path="/user" component={User} />
+            <Route component={HomeScreen} />
+            </Switch>
+            <UserPanel />
+          </SafeAreaView>
+        </Router>
       </ApplicationProvider>
     );
-  } else {
-    return (
-      <ApplicationProvider mapping={mapping} theme={lightTheme}>
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator />
-      </View>
-      </ApplicationProvider>
-    );
-  }
-}
+  };
 
-async function loadResourcesAsync() {
-  await Promise.all([
-    Asset.loadAsync([
-      require('./assets/images/robot-dev.png'),
-      require('./assets/images/robot-prod.png'),
-    ]),
-    Font.loadAsync({
-      // This is the font that we are using for our tab bar
-      ...Ionicons.font,
-      // We include SpaceMono because we use it in HomeScreen.js. Feel free to
-      // remove this if you are not using it in your app
-      'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
-    }),
-  ]);
-}
-
-function handleLoadingError(error) {
-  // In this case, you might want to report the error to your error reporting
-  // service, for example Sentry
-  console.warn(error);
-}
-
-function handleFinishLoading(setLoadingComplete) {
-  setLoadingComplete(true);
-}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#fff',
   },
 });
