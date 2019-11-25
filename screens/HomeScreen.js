@@ -11,6 +11,8 @@ import {
 import roles from '../fakeData/roles';
 import { Link } from "../navigation/react-router";
 import Card from '../components/Card';
+import normalize from 'react-native-normalize/src/index';
+import styles from '../styles';
 
 const cards = roles.map((item) => {
   return <Card key={item.id} item={item} />;
@@ -18,9 +20,14 @@ const cards = roles.map((item) => {
 
 export default function HomeScreen() {
   return (
-      <View style={styles.contentContainer}>
+      <ScrollView
+      contentContainerStyle={styles.scrollContainer}
+      >
+        <Text style={styles.simpleText}>Выбери направление</Text>
+        <View style={styles.contentContainer}>
           {cards}
-      </View>
+        </View>
+      </ScrollView>
   );
 }
 
@@ -28,14 +35,3 @@ HomeScreen.navigationOptions = {
   header: null,
 };
 
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    paddingTop: '15%',
-  },
-});

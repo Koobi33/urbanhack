@@ -9,22 +9,18 @@ import HomeScreen from './screens/HomeScreen';
 import BusinessScreen from './screens/BusinessScreen';
 import UserPanel from './screens/UserPanel';
 import TendersParticipating from './screens/TendersParticipating';
-
+import styles from './styles';
 const Integrator = () => <Link to={'/'}><Text>integrator</Text></Link>;
 const Government = () => <Link to={'/'}><Text>government</Text></Link>;
 const User = () => <Link to={'/'}><Text>user</Text></Link>;
 
 
-export default function App(props) {
-  const onTabSelect = (selectedIndex) => {
-    const { [index]: selectedRoute } = props.navigation.state.routes;
-    props.navigation.navigate(selectedRoute.routeName);
-  };
-
+export default function App() {
   return (
       <ApplicationProvider mapping={mapping} theme={lightTheme}>
         <Router>
-          <SafeAreaView style={styles.container}>
+          <SafeAreaView style={styles.appContainer}>
+            <UserPanel />
             <Switch>
             <Route exact path="/business" component={BusinessScreen} />
             <Route exact path="/business/tenders" component={TendersParticipating} />
@@ -33,19 +29,8 @@ export default function App(props) {
             <Route exact path="/user" component={User} />
             <Route component={HomeScreen} />
             </Switch>
-            <UserPanel />
           </SafeAreaView>
         </Router>
       </ApplicationProvider>
     );
   };
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-  },
-});

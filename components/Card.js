@@ -1,6 +1,7 @@
 import React  from 'react';
 import {Link} from '../navigation/react-router';
 import {Image, Text, View} from 'react-native';
+import normalize from 'react-native-normalize/src/index';
 
 const Card = (props) => {
   const { item } = props;
@@ -11,15 +12,14 @@ const Card = (props) => {
       underlayColor="#f0f4f7"
     >
       <View  style={{
-        display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-around',
-        height: 250,
-        width: 180,
+        height: normalize(250),
+        width: normalize(150),
         backgroundColor: '#17141d',
-        borderRadius: 10,
+        borderRadius: normalize(10),
         borderWidth: 1,
-        margin: 10
+        margin: normalize(10)
       }}>
 
         <Text style={{
@@ -29,9 +29,9 @@ const Card = (props) => {
 
 
         <Image style={{
-          height: 180,
+          height: normalize(180),
           borderRadius: 10,
-          width: 160
+          width: normalize(140),
         }} source={item.image} />
       </View>
     </Link>

@@ -7,6 +7,7 @@ import {
   ListItem,
 } from 'react-native-ui-kitten';
 import tenders from '../fakeData/tenders';
+import styles from '../styles';
 
 const renderItemAccessory = () => (
   <Button>Купить</Button>
@@ -28,7 +29,7 @@ const renderItem = ({ item, index }) => (
 
 const TendersParticipating = () => {
   return (
-    <View style={styles.contentContainer}>
+    <View style={styles.scrollContainer}>
       <List
         style={styles.list}
         data={tenders}
@@ -37,16 +38,5 @@ const TendersParticipating = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    paddingTop: '15%',
-  },
-});
 
 export default TendersParticipating;
