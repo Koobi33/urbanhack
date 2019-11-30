@@ -1,38 +1,41 @@
-import React, {useEffect, useState} from 'react';
-import { View } from 'react-native';
+import React, { useState } from 'react';
+import { View, ImageBackground } from 'react-native';
 import competitions from '../fakeData/competitions';
-import {useMoney} from '../context/moneyContext';
+import card from '../assets/urban_kit/plashka.svg';
 import {
   Tab,
   TabView,
   Text
 } from 'react-native-ui-kitten';
-
-import WrapperCard from './WrapperCard';
 import WrapperDescriptionCard from './WrapperDescriptionCard';
-import textCollection from '../constants/textCollection';
-
-const tabCards = competitions.map((item) => {
-  return <Tab key={item.id}><WrapperCard>
-    <View>
-      <Text>{item.name}</Text>
-    </View>
-  </WrapperCard></Tab>;
-});
-
-const cards = competitions.map((item) => {
-  return <WrapperDescriptionCard  key={item.id} >
-    <View>
-      <Text>{item.description}</Text>
-    </View>
-  </WrapperDescriptionCard>;
-});
+import styles from '../styles';
 
 export default function HomeScreen() {
+
+  const tabCards = competitions.map((item) => {
+    return (
+      <Tab key={item.id}>
+        <View style={styles.card}>
+          <ImageBackground source={card} style={styles.cardImage}>
+            <Text style={styles.simpleText}>{item.name}</Text>
+          </ImageBackground>
+        </View>
+      </Tab>
+    )}
+  );
+
+  const cards = competitions.map((item) => {
+    return (
+      <WrapperDescriptionCard  key={item.id} >
+        <View>
+         <Text>{item.description}</Text>
+        </View>
+      </WrapperDescriptionCard>);
+  });
+
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [selectedCard, setSelectedCard] = useState(cards[0]);
-    const [hardMode, setHardMode] = useState();
-    const {competition} = useMoney();
+
     const onSelect = (selectedIndex) => {
       setSelectedIndex(selectedIndex);
       setSelectedCard(cards[selectedIndex]);
@@ -46,7 +49,6 @@ export default function HomeScreen() {
       {tabCards}
     </TabView>
       <View style={{flex: 1, marginVertical: 10}}>
-        <Text> {textCollection[competition].categories.ai} </Text>
         {selectedCard}
       </View>
     </View>

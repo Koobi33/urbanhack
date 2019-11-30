@@ -2,17 +2,17 @@ const competitions = [
   {
     id: '0',
     name: 'junior',
-    description: 'junior'
+    description: 'Описание роли junior'
   },
   {
     id: '1',
     name: 'middle',
-    description: 'middle'
+    description: 'Описание роли middle'
   },
   {
     id: '2',
     name: 'senior',
-    description: 'senior'
+    description: 'Описание роли senior'
   },
 ];
 

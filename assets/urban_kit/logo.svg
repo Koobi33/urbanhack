@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="77px" height="51px" viewBox="0 0 77 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.4252368,18 C11.1474212,16.8791166 11,15.7067743 11,14.5 C11,6.49187113 17.4918711,0 25.5,0 C30.5253657,0 34.9536324,2.55648424 37.5552212,6.43987362 C39.1606336,5.5235715 41.0191734,5 43,5 C49.0751322,5 54,9.92486775 54,16 C54,16.682993 53.9377534,17.3514475 53.8186238,18 L54.5,18 C59.1944204,18 63,21.8055796 63,26.5 C63,31.1944204 59.1944204,35 54.5,35 L8.5,35 C3.80557963,35 -2.97781299e-15,31.1944204 -3.55271368e-15,26.5 C-5.74900688e-16,21.8055796 3.80557963,18 8.5,18 L11.4252368,18 Z" id="path-1"></path>
+        <filter x="-16.7%" y="-21.4%" width="133.3%" height="160.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="2" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-22.2%" y="-31.4%" width="144.4%" height="180.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="3" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0" transform="translate(-8.000000, 3.000000)">
+            <g id="Group-2" transform="translate(13.000000, 3.000000)">
+                <g id="Group" transform="translate(3.000000, 0.000000)">
+                    <g id="Combined-Shape" filter="url(#filter-2)">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                        <use stroke="#F6EB8C" stroke-width="1" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+                <g id="Group" stroke="#03AD79">
+                    <path d="M11.9105521,17.8797126 L12.0642929,18.5 L8.5,18.5 C4.081722,18.5 0.5,22.081722 0.5,26.5 C0.5,30.918278 4.081722,34.5 8.5,34.5 L54.5,34.5 C58.918278,34.5 62.5,30.918278 62.5,26.5 C62.5,22.081722 58.918278,18.5 54.5,18.5 L53.218416,18.5 L53.3268512,17.9096686 C53.441725,17.2842855 53.5,16.6459863 53.5,16 C53.5,10.2010101 48.7989899,5.5 43,5.5 C41.1511593,5.5 39.3730845,5.97802272 37.8030712,6.87412055 L37.3988606,7.10482703 L37.1398223,6.71816074 C34.5563756,2.86185207 30.2288954,0.5 25.5,0.5 C17.7680135,0.5 11.5,6.7680135 11.5,14.5 C11.5,15.6509143 11.6387766,16.7831988 11.9105521,17.8797126 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
