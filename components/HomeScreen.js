@@ -15,7 +15,7 @@ import textCollection from '../constants/textCollection';
 const tabCards = competitions.map((item) => {
   return <Tab key={item.id}><WrapperCard>
     <View>
-      <Text>{item.name}</Text>
+      <Text style={{fontFamily: 'Courier New'}}>{item.name}</Text>
     </View>
   </WrapperCard></Tab>;
 });
