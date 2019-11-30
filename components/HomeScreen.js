@@ -1,32 +1,42 @@
 import React, { useState } from 'react';
-import {
- View,
-} from 'react-native';
-import roles from '../fakeData/roles';
-import Card from './Card';
+import { View } from 'react-native';
+import competitions from '../fakeData/competitions';
+import {useMoney} from '../context/moneyContext';
 import {
   Tab,
   TabView,
+  Text
 } from 'react-native-ui-kitten';
 
-import ChooseRoleCard from './ChooseRoleCard';
+import WrapperCard from './WrapperCard';
+import WrapperDescriptionCard from './WrapperDescriptionCard';
+import textCollection from '../constants/textCollection';
 
-const tabCards = roles.map((item) => {
-  return <Tab title={item.name} key={item.id}><Card item={item} /></Tab>;
+const tabCards = competitions.map((item) => {
+  return <Tab key={item.id}><WrapperCard>
+    <View>
+      <Text>{item.name}</Text>
+    </View>
+  </WrapperCard></Tab>;
 });
 
-const cards = roles.map((item) => {
-  return <ChooseRoleCard  key={item.id} item={item} />;
+const cards = competitions.map((item) => {
+  return <WrapperDescriptionCard  key={item.id} >
+    <View>
+      <Text>{item.description}</Text>
+    </View>
+  </WrapperDescriptionCard>;
 });
 
 export default function HomeScreen() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [selectedCard, setSelectedCard] = useState(cards[0]);
+    // const {competition} = useMoney();
     const onSelect = (selectedIndex) => {
       setSelectedIndex(selectedIndex);
       setSelectedCard(cards[selectedIndex]);
   };
-
+// console.log(competition);
   return (
     <View style={{flex: 1, overflow: 'hidden'}}>
     <TabView
@@ -36,6 +46,7 @@ export default function HomeScreen() {
       {tabCards}
     </TabView>
       <View style={{flex: 1, marginVertical: 10}}>
+        {/*{textCollection[competition].categories.ai}*/}
         {selectedCard}
       </View>
     </View>
