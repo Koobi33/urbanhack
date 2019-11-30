@@ -4,7 +4,7 @@ import normalize from 'react-native-normalize/src/index';
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#1D1E1F',
       marginTop: normalize(30)
   },
   appRouterContainer: {
@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
     marginTop: normalize(100),
   },
   simpleText: {
-    color: 'green',
+    color: 'white',
     textAlign: 'center',
     fontWeight: '800',
     textDecorationLine: 'none',
-    fontSize: normalize(18),
+    fontSize: normalize(23),
   },
   userPanel: {
     flex: 1,
@@ -50,49 +50,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
   },
-  card: {
-    alignItems: 'center',
-    // justifyContent: 'space-around',
-    height: normalize(250),
-    width: normalize(340),
-    // backgroundColor: '#17141d',
-    borderRadius: normalize(10),
-    borderWidth: 3,
-    borderColor: "#03AD79",
-    margin: normalize(10),
 
-    shadowColor: "#03AD79",
-    shadowOffset: {
-      width: normalize(6.5),
-      height: normalize(5.7),
-    },
-    shadowOpacity: 0.55,
-    shadowRadius: 14.78,
-
-  },
-  cardAngle: {
-    position: 'absolute',
-    display: 'flex',
-    width: 0,
-    height: 0,
-    left: -3,
-    top: -3,
-    borderTopWidth: normalize( 100),
-    borderTopColor: "#03AD79",
-    borderRightWidth: normalize( 100),
-    borderRightColor: 'transparent',
-  },
-  innerCardAngle: {
-    position: 'absolute',
-    width: 0,
-    height: 0,
-    left: -3,
-    top:  -3,
-    borderTopWidth: normalize( 96),
-    borderTopColor: 'white',
-    borderRightWidth: normalize(96),
-    borderRightColor: 'transparent',
-  },
   roleDescriptionCard: {
     alignItems: 'center',
     flex: 1,
@@ -101,21 +59,20 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     margin: normalize(10)
   },
-  cardText: {
-    fontSize: normalize(20),
-    color: 'white',
-    fontWeight: '800',
-    zIndex: 3,
+  card: {
+    flex: 1,
+    alignItems: 'center',
+    height: normalize(250),
+    width: normalize(340),
+    margin: normalize(10),
   },
   cardImage: {
     flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    paddingBottom: normalize(10),
-    width: '100%',
-  },
-  cardImage_Image: {
-    borderRadius: normalize(7),
+    width: normalize(290),
+    height: normalize(200),
+    // padding: normalize(5),
   },
   homeButton: {
     borderRadius: normalize(50),

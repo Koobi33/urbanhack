@@ -23,11 +23,12 @@ const User = () => <Link to={'/'}><Text>user</Text></Link>;
 
 export default function App() {
   const [money, setMoney] = useState(0);
-  const [competition, setCompetition] = useState('');
+  const [competition, setCompetition] = useState('junior');
 
   useEffect(() => {
     const localCompetition = localStorage.getItem('competition');
     if (!!localCompetition && localCompetition !== '') {
+      console.log(localCompetition, 'test');
       setCompetition(localCompetition);
     }
   }, []);
