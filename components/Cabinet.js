@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-// import { VictoryPie, VictoryLabel, VictoryAnimation } from "victory";
-import gif from '../assets/images/image.gif';
 import {VictoryChart, VictoryLine, VictoryTheme, VictoryPie, VictoryBar} from 'victory'
-import {
-  Image,
-  View,
-} from 'react-native';
+import {View} from 'react-native';
 import roles from '../fakeData/roles';
 import WrapperCard from '../components/WrapperCard';
 import {
@@ -14,7 +9,6 @@ import {
   Text,
 } from 'react-native-ui-kitten';
 import WrapperDescriptionCard from '../components/WrapperDescriptionCard';
-import normalize from "react-native-normalize/src/index";
 
 const tabCards = roles.map((item) => {
   return <Tab title={item.name} key={item.id}><WrapperCard><Text>{item.name}</Text></WrapperCard></Tab>;
@@ -78,7 +72,6 @@ const cards = roles.map((item) => {
       // }}
 
     />
-    <Image style={{height: normalize(330), width: normalize(330)}} source={{uri: gif}} />
   </WrapperDescriptionCard>;
 });
 

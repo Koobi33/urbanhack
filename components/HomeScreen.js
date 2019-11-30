@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Image,
-  View,
-} from 'react-native';
+import {View} from 'react-native';
 import roles from '../fakeData/roles';
 import Card from './Card';
 import {
@@ -11,8 +8,6 @@ import {
 } from 'react-native-ui-kitten';
 
 import ChooseRoleCard from './ChooseRoleCard';
-import normalize from "react-native-normalize/src/index";
-import gif from "../assets/images/image.gif";
 
 const tabCards = roles.map((item) => {
   return <Tab title={item.name} key={item.id}><Card item={item} /></Tab>;
@@ -38,7 +33,6 @@ export default function HomeScreen() {
       onSelect={onSelect}>
       {tabCards}
     </TabView>
-      <Image style={{height: normalize(330), width: normalize(330)}} source={{uri: gif}} />
       <View style={{flex: 1, marginVertical: 10}}>
         {selectedCard}
       </View>
