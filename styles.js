@@ -137,7 +137,28 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.55,
     shadowRadius: 14.78,
-
+  },
+  helpButton: {
+    borderRadius: normalize(50),
+    zIndex: 1,
+    borderWidth: normalize(1),
+    borderColor: '#19ADA2',
+    width: normalize(60),
+    height: normalize(60),
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'fixed',
+    bottom: normalize(15),
+    left: normalize(15),
+    backgroundColor: '#03AD79',
+    shadowColor: "#03AD79",
+    shadowOffset: {
+      width: normalize(0),
+      height: normalize(0),
+    },
+    shadowOpacity: 0.55,
+    shadowRadius: 14.78,
   }
 });
 

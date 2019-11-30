@@ -11,7 +11,6 @@ const cards = businessScenarios.map((item) => {
 const BusinessScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
-
       <ScrollView  contentContainerStyle={styles.scrollContainer}>
         <Text style={styles.simpleText}>Выбери задачу</Text>
         <View style={styles.contentContainer}>
@@ -27,7 +26,6 @@ const BusinessScreen = () => {
           <View style={{marginTop: 22}}>
             <View>
               <Text>Hello World!</Text>
-
               <TouchableHighlight
                 onPress={() => {
                   setModalVisible(!modalVisible);

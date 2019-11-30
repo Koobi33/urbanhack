@@ -12,6 +12,7 @@ import Cabinet from './components/Cabinet';
 import { MoneyContext } from './context/moneyContext';
 import styles from './styles';
 import ToHome from './components/ToHome';
+import HelpButton from './components/HelpButton';
 
 const Integrator = () => <Link to={'/'}><Text>integrator</Text></Link>;
 const Government = () => <Link to={'/'}><Text>government</Text></Link>;
@@ -39,6 +40,7 @@ export default function App() {
               </Switch>
             </View>
             <ToHome/>
+            <HelpButton/>
           </SafeAreaView>
         </Router>
       </MoneyContext.Provider>
