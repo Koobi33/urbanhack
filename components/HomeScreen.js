@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { View } from 'react-native';
 import competitions from '../fakeData/competitions';
 import {useMoney} from '../context/moneyContext';
@@ -31,12 +31,12 @@ const cards = competitions.map((item) => {
 export default function HomeScreen() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [selectedCard, setSelectedCard] = useState(cards[0]);
-    // const {competition} = useMoney();
+    const [hardMode, setHardMode] = useState();
+    const {competition} = useMoney();
     const onSelect = (selectedIndex) => {
       setSelectedIndex(selectedIndex);
       setSelectedCard(cards[selectedIndex]);
   };
-// console.log(competition);
   return (
     <View style={{flex: 1, overflow: 'hidden'}}>
     <TabView
@@ -46,7 +46,7 @@ export default function HomeScreen() {
       {tabCards}
     </TabView>
       <View style={{flex: 1, marginVertical: 10}}>
-        {/*{textCollection[competition].categories.ai}*/}
+        <Text> {textCollection[competition].categories.ai} </Text>
         {selectedCard}
       </View>
     </View>
