@@ -44,9 +44,7 @@ export default function App() {
     const perSecondCost = activeProducts.filter((prod) => prod.isActive === true).reduce((a, b) => a + b.toPay, 0);
     setMoney(money => money - perSecondCost);
   }, 1000);
-  useEffect(() => {
-    console.log(activeProducts);
-  }, [activeProducts]);
+
 
   return (
    <ApplicationProvider mapping={mapping} theme={darkTheme}>

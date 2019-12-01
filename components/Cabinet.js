@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, FlatList} from 'react-native';
 import marketList from "../fakeData/market/marketList";
 import normalize from "react-native-normalize/src/index";
@@ -8,13 +8,26 @@ import {Link} from "../navigation/react-router";
 import {Toggle} from 'react-native-ui-kitten';
 import {useMoney} from '../context/moneyContext';
 import HelpButton from './HelpButton';
+import TouchableOpacity from "react-native-web/dist/exports/TouchableOpacity";
+import {Modal} from "../modal";
+import StatisticsModal from "./StatisticsModal";
+
 
 export default function Cabinet(props) {
-
+  const [modalVisible, setModalVisible] = useState(false);
   const {activeProducts, setActiveProducts, boughtProducts } = useMoney();
 
   return (
     <View>
+      {modalVisible ?
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={modalVisible}>
+          <StatisticsModal modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+        </Modal>
+        : null
+      }
       <Text style={[styles.productCompany, {marginLeft: normalize(20)}]}>Контейнеры</Text>
       <FlatList
         data={activeProducts}
@@ -81,8 +94,24 @@ export default function Cabinet(props) {
         data={marketList.slice(0, 3)}
         renderItem={data => {
           return (
-            <View style={{flexDirection: 'row', marginBottom: normalize(10), marginHorizontal: normalize(10), paddingVertical: normalize(25), justifyContent: 'space-around'}}>
-              <View style={{width: normalize(70), height: normalize(70), justifyContent: 'center', alignItems: 'center', borderWidth: normalize(5), borderColor: '#03AD79', borderRadius: normalize(8), marginRight: normalize(15), marginHorizontal: normalize(10)}}>
+            <View style={{
+              flexDirection: 'row',
+              marginBottom: normalize(10),
+              marginHorizontal: normalize(10),
+              paddingVertical: normalize(25),
+              justifyContent: 'space-around'
+            }}>
+              <View style={{
+                width: normalize(70),
+                height: normalize(70),
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderWidth: normalize(5),
+                borderColor: '#03AD79',
+                borderRadius: normalize(8),
+                marginRight: normalize(15),
+                marginHorizontal: normalize(10)
+              }}>
                 <Image source={cloud} style={{width: normalize(50), height: normalize(40)}}/>
               </View>
               <View style={{width: normalize(200)}}>
@@ -92,16 +121,16 @@ export default function Cabinet(props) {
               </View>
 
               <View style={{alignSelf: 'center'}}>
-                <Link to={`/product/${data.item.id}`}>
-                  <View style={[styles.futureBut, {width: normalize(70), height: normalize(40),}]}>
-                    <Text style={styles.futureButTextSmall}>Перейти</Text>
-                  </View>
-                </Link>
+                {/*<Link to={`/product/${data.item.id}`}>*/}
+                  <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                    <View style={[styles.futureBut, {width: normalize(70), height: normalize(40),}]}>
+                      <Text style={styles.futureButTextSmall}>Перейти</Text>
+                    </View>
+                  </TouchableOpacity>
+                {/*</Link>*/}
               </View>
-            </View>
-          );
-        }}
-      />
+            </View>)
+        }} />
       <HelpButton {...props} />
     </View>
   );
