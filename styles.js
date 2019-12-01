@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     // textAlign: 'center',
     fontWeight: '800',
     textDecorationLine: 'none',
-    fontSize: normalize(24),
+    fontSize: normalize(20),
     fontFamily: 'Courier New',
     marginLeft: normalize(5),
   },

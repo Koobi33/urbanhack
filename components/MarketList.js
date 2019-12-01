@@ -1,12 +1,13 @@
 import React from 'react';
 import {View, Text, FlatList, Image} from 'react-native';
 import marketList from "../fakeData/market/marketList";
-import cloud from '../assets/images/logo.svg';
+import cloud from '../assets/urban_kit/logo.svg';
 import normalize from "react-native-normalize/src/index";
 import styles from "../styles";
 import {Link} from '../navigation/react-router';
+import HelpButton from './HelpButton';
 
-export default function Market() {
+export default function Market(props) {
   return(
     <FlatList
       data={marketList}
@@ -27,6 +28,7 @@ export default function Market() {
               </View>
             </Link>
             </View>
+            <HelpButton {...props} />
           </View>
         );
       }}

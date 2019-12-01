@@ -3,25 +3,25 @@ const paasCategories = {
     {
       id: 0,
       name: 'paas1',
-      link: 'ai'
+      link: 'marketlist'
     }
     ,
     {
       id: 1,
       name: 'paas2',
-      link: 'paas'
+      link: 'marketlist'
     }
     ,
     {
       id: 2,
       name: 'paas3',
-      link: 'iaas'
+      link: 'marketlist'
     }
     ,
     {
       id: 3,
       name: 'paas4',
-      link: 'licenses'
+      link: 'marketlist'
     }
   ],
 
@@ -29,50 +29,50 @@ const paasCategories = {
     {
       id: 0,
       name: 'paas1',
-      link: 'ai'
+      link: 'marketlist'
     }
     ,
     {
       id: 1,
       name: 'paas2',
-      link: 'paas'
+      link: 'marketlist'
     }
     ,
     {
       id: 2,
       name: 'paas3',
-      link: 'iaas'
+      link: 'marketlist'
     }
     ,
     {
       id: 3,
       name: 'paas4',
-      link: 'licenses'
+      link: 'marketlist'
     }
   ],
   senior: [
     {
       id: 0,
       name: 'paas1',
-      link: 'ai'
+      link: 'marketlist'
     }
     ,
     {
       id: 1,
       name: 'paas2',
-      link: 'paas'
+      link: 'marketlist'
     }
     ,
     {
       id: 2,
       name: 'paas3',
-      link: 'iaas'
+      link: 'marketlist'
     }
     ,
     {
       id: 3,
       name: 'paas4',
-      link: 'licenses'
+      link: 'marketlist'
     }
   ]
 };

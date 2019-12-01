@@ -27,7 +27,7 @@ export default function App() {
   const [money, setMoney] = useState(50000);
   const [competition, setCompetition] = useState('junior');
   const localCompetition = localStorage.getItem('competition');
-  const [activeProducts, setActiveProducts] = useState([]);
+  const [activeProducts, setActiveProducts] = useState([{id: 100, product: 'start container', toPay: 0, isActive: true }]);
   const [boughtProducts, setBoughtProducts] = useState([]);
 
   useEffect(() => {
@@ -56,23 +56,24 @@ export default function App() {
             <UserPanel />
             <View style={styles.appRouterContainer}>
               <Switch>
-                <Route exact path="/business" component={BusinessScreen} />
-                <Route exact path="/user" component={User} />
                 <Route exact path="/cabinet" component={Cabinet} />
-                <Route exact path="/upload" component={Upload} />
                 <Route exact path="/partnership" component={Partnership} />
-                <Route exact path="/marketlist" component={MarketList} />
+                <Route exact path="/upload" component={Upload} />
+
                 <Route exact path="/market" component={Market} />
-                <Route exact path="/product/:id" component={ProductCard} />
                 <Route exact path="/ai" component={Market} />
                 <Route exact path="/iaas" component={Market} />
                 <Route exact path="/paas" component={Market} />
                 <Route exact path="/licenses" component={Market} />
+
+                <Route exact path="/marketlist" component={MarketList} />
+
+                <Route exact path="/product/:id" component={ProductCard} />
+
                 <Route component={HomeScreen} />
               </Switch>
             </View>
             <ToHome/>
-            {competition === 'middle' || competition === 'junior' ? <HelpButton/> : null}
           </SafeAreaView>
         </Router>
       </MoneyContext.Provider>

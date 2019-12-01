@@ -8,8 +8,10 @@ import moneyIcon from '../assets/urban_kit/valuta.svg';
 import {useMoney} from '../context/moneyContext';
 import {Modal} from '../modal';
 import ModalContent from './ModalContent';
+import {Link} from '../navigation/react-router';
 
 import PayModal from './PayModal';
+import HelpButton from './HelpButton';
 
 
 export default function ProductCard(props) {
@@ -87,9 +89,14 @@ export default function ProductCard(props) {
         </View>
       </View>
       <View>
-        <TouchableOpacity style={[styles.futureBut, {width: normalize(300), height: normalize(40), alignSelf: 'center', marginTop: normalize(20)}]}>
-          <Text style={styles.futureButText}>Стать партнером</Text>
+        <Link to={'/partnership'}>
+        <TouchableOpacity>
+          <View style={[styles.futureBut, {width: normalize(300), height: normalize(40), alignSelf: 'center', marginTop: normalize(20)}]}>
+            <Text style={styles.futureButText}>Стать партнером</Text>
+          </View>
         </TouchableOpacity>
+    </Link>
+        <HelpButton {...props} />
         <View style={{flexDirection: 'row', justifyContent: 'space-around', marginVertical: normalize(20)}}>
           {costArr}
         </View>

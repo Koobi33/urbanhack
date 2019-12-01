@@ -1,39 +1,24 @@
-import React, { useState } from 'react';
-import {View, Text, TouchableHighlight} from 'react-native';
+import React from 'react';
+import {Text, View} from 'react-native';
 import styles from '../styles';
-import {Modal} from '../modal';
-import {Button} from 'react-native-ui-kitten';
+
+import {TouchableOpacity} from 'react-native-web';
 
 
-const HelpButton = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+
+
+
+const HelpButton = (props) => {
+  const menshe = '<';
+  const {history} = props;
   return (
-    <Button style={styles.helpButton} onPress={() => {
-      setModalVisible(!modalVisible);
-    }}>
-      <Modal
-        animationType="slide"
-        transparent={false}
-        visible={modalVisible}
-        onDismiss={() => {
-          alert('Modal has been closed.');
-        }}>
-        <View style={{marginTop: 22}}>
-          <View>
-            <Text>Hello World!</Text>
-            <TouchableHighlight
-              onPress={() => {
-                setModalVisible(!modalVisible);
-              }}>
-              <Text>Hide Modal</Text>
-            </TouchableHighlight>
-          </View>
-        </View>
-      </Modal>
-
-        <Text>Halp</Text>
-      </Button>
-
+<TouchableOpacity onPress={() => {
+ history.goBack();
+}}>
+  <View style={styles.helpButton}>
+    <Text>{menshe}</Text>
+    </View>
+</TouchableOpacity>
   );
 };
 

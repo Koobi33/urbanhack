@@ -3,25 +3,25 @@ const licensesCategories = {
     {
       id: 0,
       name: 'licenses1',
-      link: 'ai'
+      link: 'marketlist'
     }
     ,
     {
       id: 1,
       name: 'licenses2',
-      link: 'paas'
+      link: 'marketlist'
     }
     ,
     {
       id: 2,
       name: 'licenses3',
-      link: 'iaas'
+      link: 'marketlist'
     }
     ,
     {
       id: 3,
       name: 'licenses4',
-      link: 'licenses'
+      link: 'marketlist'
     }
   ],
 
@@ -29,50 +29,50 @@ const licensesCategories = {
     {
       id: 0,
       name: 'licenses1',
-      link: 'ai'
+      link: 'marketlist'
     }
     ,
     {
       id: 1,
       name: 'licenses2',
-      link: 'paas'
+      link: 'marketlist'
     }
     ,
     {
       id: 2,
       name: 'licenses3',
-      link: 'iaas'
+      link: 'marketlist'
     }
     ,
     {
       id: 3,
       name: 'licenses4',
-      link: 'licenses'
+      link: 'marketlist'
     }
   ],
   senior: [
     {
       id: 0,
       name: 'licenses1',
-      link: 'ai'
+      link: 'marketlist'
     }
     ,
     {
       id: 1,
       name: 'licenses2',
-      link: 'paas'
+      link: 'marketlist'
     }
     ,
     {
       id: 2,
       name: 'licenses3',
-      link: 'iaas'
+      link: 'marketlist'
     }
     ,
     {
       id: 3,
       name: 'licenses4',
-      link: 'licenses'
+      link: 'marketlist'
     }
   ]
 };

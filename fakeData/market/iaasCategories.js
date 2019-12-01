@@ -3,25 +3,25 @@ const iaasCategories = {
     {
       id: 0,
       name: 'iaas1',
-      link: 'ai'
+      link: 'marketlist'
     }
     ,
     {
       id: 1,
       name: 'iaas2',
-      link: 'paas'
+      link: 'marketlist'
     }
     ,
     {
       id: 2,
       name: 'iaas3',
-      link: 'iaas'
+      link: 'marketlist'
     }
     ,
     {
       id: 3,
       name: 'iaas4',
-      link: 'licenses'
+      link: 'marketlist'
     }
   ],
 
@@ -29,50 +29,50 @@ const iaasCategories = {
     {
       id: 0,
       name: 'iaas1',
-      link: 'ai'
+      link: 'marketlist'
     }
     ,
     {
       id: 1,
       name: 'iaas2',
-      link: 'paas'
+      link: 'marketlist'
     }
     ,
     {
       id: 2,
       name: 'iaas3',
-      link: 'iaas'
+      link: 'marketlist'
     }
     ,
     {
       id: 3,
       name: 'iaas4',
-      link: 'licenses'
+      link: 'marketlist'
     }
   ],
   senior: [
     {
       id: 0,
       name: 'iaas1',
-      link: 'ai'
+      link: 'marketlist'
     }
     ,
     {
       id: 1,
       name: 'iaas2',
-      link: 'paas'
+      link: 'marketlist'
     }
     ,
     {
       id: 2,
       name: 'iaas3',
-      link: 'iaas'
+      link: 'marketlist'
     }
     ,
     {
       id: 3,
       name: 'iaas4',
-      link: 'licenses'
+      link: 'marketlist'
     }
   ]
 };

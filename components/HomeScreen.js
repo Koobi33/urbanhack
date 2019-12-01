@@ -38,13 +38,18 @@ const { setCompetition } = useMoney();
       <View  key={item.id} style={{flex: 1}}>
         <ImageBackground source={info} style={{flex: 1, justifyContent: 'flex-start', alignItems: 'center', width: normalize(300), height: normalize(255),  paddingTop: normalize(70)}}>
           <Text style={styles.simpleText}>{item.description}</Text>
-         <TouchableOpacity
+
+          <TouchableOpacity
            style={{marginTop: normalize(35)}}
            onPress={() => {
              localStorage.setItem('competition', item.name);
              setCompetition(item.name);
            }}>
-          <Link to={'/market'}><FutureButton name="Выбрать" /></Link>
+          <Link to={'/market'}>
+            <View style={[styles.futureBut, {width: normalize(240), height: normalize(40), alignSelf: 'center'}]}>
+              <Text style={styles.futureButText}>Выбрать</Text>
+            </View>
+          </Link>
          </TouchableOpacity>
          </ImageBackground>
       </View>);

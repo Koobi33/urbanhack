@@ -5,8 +5,9 @@ import { Button, Text } from 'react-native-ui-kitten';
 import useTimeout from 'use-timeout';
 import {Modal} from '../modal';
 import {TouchableWithoutFeedback} from 'react-native-web';
+import HelpButton from './HelpButton';
 
-const Upload = () => {
+const Upload = (props) => {
   const [loading, setLoading] = useState(false);
   const [uploaded, setUploaded] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -53,6 +54,7 @@ const Upload = () => {
               <Button>Домой</Button>
             </Link>
           </View>}
+        <HelpButton {...props} />
       </View>
     );
 };

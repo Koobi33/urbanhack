@@ -14,19 +14,29 @@ import paasCategories from '../fakeData/market/paasCategories';
 import {useMoney} from '../context/moneyContext';
 import {Modal} from '../modal';
 import ModalContent from './ModalContent';
+import HelpButton from './HelpButton';
 
 export default function Market(props) {
   const {competition} = useMoney();
   const [categories, setCategories] = useState(marketCategories);
   const [modalVisible, setModalVisible] = useState(false);
-
-  const categoriesButtons = categories[competition].map((item) =>
+  const [categoriesButtons, setCategoriesButtons] = useState(categories[competition].map((item) =>
     <Link to={item.link}>
-     <TouchableOpacity style={styles.marketCard}>
-       <Text style={styles.marketCardText}>{item.name}</Text>
-     </TouchableOpacity>
-     </Link>
-       );
+      <TouchableOpacity style={styles.marketCard}>
+        <Text style={styles.marketCardText}>{item.name}</Text>
+      </TouchableOpacity>
+    </Link>
+  ));
+
+useEffect(() => {
+  setCategoriesButtons(categories[competition].map((item) =>
+    <Link to={item.link}>
+      <TouchableOpacity style={styles.marketCard}>
+        <Text style={styles.marketCardText}>{item.name}</Text>
+      </TouchableOpacity>
+    </Link>
+  ))
+}, [categories]);
   useEffect(() => {
       switch (props.location.pathname) {
         case ('/ai'): {
@@ -76,11 +86,16 @@ export default function Market(props) {
         data={top}
         keyExtractor={item => item.id}
         renderItem={(data) =>
-          <View style={{width: normalize(300), height: normalize(250), justifyContent: 'center', alignItems: 'center', borderWidth: normalize(8), borderColor: '#03ad79', marginVertical: normalize(40), borderRadius: normalize(10), marginRight: normalize(20)}}>
-           <Text style={styles.simpleText}>{data.item.title}</Text>
-          </View>
+          <Link to={'marketlist'}>
+            <TouchableOpacity>
+             <View style={{width: normalize(300), height: normalize(250), justifyContent: 'center', alignItems: 'center', borderWidth: normalize(8), borderColor: '#03ad79', marginVertical: normalize(40), borderRadius: normalize(10), marginRight: normalize(20)}}>
+                <Text style={styles.simpleText}>{data.item.title}</Text>
+             </View>
+            </TouchableOpacity>
+          </Link>
         }
       />
+        <HelpButton {...props} />
       </View>
     </View>
   );
