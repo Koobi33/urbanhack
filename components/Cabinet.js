@@ -6,11 +6,24 @@ import cloud from "../assets/images/logo.svg";
 import styles from "../styles";
 import {Link} from "../navigation/react-router";
 import {Toggle} from 'react-native-ui-kitten';
+import TouchableOpacity from "react-native-web/dist/exports/TouchableOpacity";
+import ModalContent from "./ModalContent";
+import {Modal} from "../modal";
+import StatisticsModal from "./StatisticsModal";
 
 export default function Cabinet() {
-
+const [modalVisible, setModalVisible] = useState(false);
   return (
     <View>
+      {modalVisible ?
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={modalVisible}>
+          <StatisticsModal modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+        </Modal>
+        : null
+      }
       <Text style={[styles.productCompany, {marginLeft: normalize(20)}]}>Контейнеры</Text>
       <FlatList
         data={marketList}
@@ -78,11 +91,13 @@ export default function Cabinet() {
               </View>
 
               <View style={{alignSelf: 'center'}}>
-                <Link to={`/product/${data.item.id}`}>
+                {/*<Link to={`/product/${data.item.id}`}>*/}
+                <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                   <View style={[styles.futureBut, {width: normalize(70), height: normalize(40),}]}>
                     <Text style={styles.futureButTextSmall}>Перейти</Text>
                   </View>
-                </Link>
+                </TouchableOpacity>
+                {/*</Link>*/}
               </View>
             </View>
           );
