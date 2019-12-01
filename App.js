@@ -17,6 +17,7 @@ import Upload from './components/Upload';
 import Partnership from './components/Partnership';
 import MarketList from "./components/MarketList";
 import Market from "./components/Market";
+import ProductCard from "./components/ProductCard";
 
 const Integrator = () => <Link to={'/'}><Text>integrator</Text></Link>;
 const Government = () => <Link to={'/'}><Text>government</Text></Link>;
@@ -56,6 +57,7 @@ export default function App() {
                 <Route exact path="/partnership" component={Partnership} />
                 <Route exact path="/marketlist" component={MarketList} />
                 <Route exact path="/market" component={Market} />
+                <Route exact path="/product" component={ProductCard} />
                 <Route component={HomeScreen} />
               </Switch>
             </View>
