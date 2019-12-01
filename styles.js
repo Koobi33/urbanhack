@@ -10,15 +10,6 @@ const styles = StyleSheet.create({
   appRouterContainer: {
     flex: 1,
     marginTop: normalize(30),
-    borderTopLeftRadius: normalize(20),
-    borderTopRightRadius: normalize(20),
-    borderLeftWidth: 1,
-    borderTopWidth: 2,
-    borderRightWidth: 1,
-    borderColor: 'black',
-    paddingTop: normalize(7),
-    paddingLeft: normalize(7),
-    paddingRight: normalize(7),
   },
   contentContainer: {
     flex: 1,

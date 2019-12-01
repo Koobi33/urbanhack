@@ -35,6 +35,9 @@ export default function App() {
     }
   }, []);
 
+  useEffect(() => {
+    console.log(competition)
+  }, [competition]);
   return (
     <ApplicationProvider mapping={mapping} theme={lightTheme}>
       <MoneyContext.Provider value={{ money, setMoney, competition, setCompetition }}>
