@@ -12,7 +12,7 @@ const UserPanel = () => {
   const { money, setMoney, role } = useMoney();
   return (
       <View style={styles.userPanel}>
-        <TouchableOpacity onPress={() => setMoney(money + 10)}>
+        <TouchableOpacity onPress={() => setMoney(money + 10)} style={{flexDirection: 'row', alignItems: 'center'}}>
           <Image source={moneyIcon} style={{height: normalize(20), width: normalize(20)}} />
           <Text  style={styles.simpleTextMoney}>{money}</Text>
         </TouchableOpacity>
