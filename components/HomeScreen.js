@@ -15,7 +15,6 @@ import {normalize} from "react-native-elements";
 export default function HomeScreen() {
 
   const tabCards = competitions.map((item) => {
-    console.log(item);
     return (
       <Tab key={item.id}>
         <View style={styles.card}>

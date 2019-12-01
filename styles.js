@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     textDecorationLine: 'none',
     fontSize: normalize(23),
+    fontFamily: 'Courier New'
   },
   simpleTextLK: {
     color: '#03ad79',
