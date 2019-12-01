@@ -188,6 +188,12 @@ const styles = StyleSheet.create({
     color: '#f6eb8c',
     fontWeight: '800',
   },
+  futureButTextSmall: {
+    fontFamily: 'Courier New',
+    fontSize: normalize(14),
+    color: '#f6eb8c',
+    fontWeight: '800',
+  },
 });
 
 export default styles;

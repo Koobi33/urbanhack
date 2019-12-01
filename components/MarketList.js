@@ -1,28 +1,35 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList, Image} from 'react-native';
 import marketList from "../fakeData/market/marketList";
-import {Icon, List, ListItem} from 'react-native-ui-kitten';
+import cloud from '../assets/images/logo.svg';
+import normalize from "react-native-normalize/src/index";
+import styles from "../styles";
 import {Link} from '../navigation/react-router';
 
 export default function Market() {
-  // const renderItemIcon = (style) => (
-    {/*<Icon {...style} name='person' />*/}
-  // );
-
-  const renderItem = ({ item, index }) => (
-    <ListItem
-      title={`${item.product}`}
-      description={`${item.company}`}
-      // icon={renderItemIcon}
-    >
-    </ListItem>
-  );
-
-  return (
-    <List
-      // style={styles.list}
+  return(
+    <FlatList
       data={marketList}
-      renderItem={renderItem}
+      renderItem={(data) => {
+        return (
+          <View style={{flexDirection: 'row', marginBottom: normalize(10), marginHorizontal: normalize(10)}}>
+            <View style={{width: normalize(70), height: normalize(70), justifyContent: 'center', alignItems: 'center', borderWidth: normalize(5), borderColor: '#03AD79', borderRadius: normalize(8), marginRight: normalize(15)}}>
+              <Image source={cloud} style={{width: normalize(50), height: normalize(40)}}/>
+            </View>
+            <View style={{width: normalize(200)}}>
+              <Text style={styles.productName}>{data.item.product}</Text>
+              <Text style={styles.productDescription}>{data.item.company}</Text>
+            </View>
+            <View style={{alignSelf: 'center'}}>
+            <Link to={`/product/${data.item.id}`}>
+              <View style={[styles.futureBut, {width: normalize(70), height: normalize(40),}]}>
+                <Text style={styles.futureButTextSmall}>Перейти</Text>
+              </View>
+            </Link>
+            </View>
+          </View>
+        );
+      }}
     />
   );
 }
