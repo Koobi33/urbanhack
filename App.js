@@ -15,6 +15,8 @@ import ToHome from './components/ToHome';
 import HelpButton from './components/HelpButton';
 import Upload from './components/Upload';
 import Partnership from './components/Partnership';
+import MarketList from "./components/MarketList";
+import Market from "./components/Market";
 
 const Integrator = () => <Link to={'/'}><Text>integrator</Text></Link>;
 const Government = () => <Link to={'/'}><Text>government</Text></Link>;
@@ -49,6 +51,8 @@ export default function App() {
                 <Route exact path="/cabinet" component={Cabinet} />
                 <Route exact path="/upload" component={Upload} />
                 <Route exact path="/partnership" component={Partnership} />
+                <Route exact path="/marketlist" component={MarketList} />
+                <Route exact path="/market" component={Market} />
                 <Route component={HomeScreen} />
               </Switch>
             </View>

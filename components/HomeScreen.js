@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, ImageBackground } from 'react-native';
 import competitions from '../fakeData/competitions';
 import card from '../assets/urban_kit/plashka.svg';
-import info from '../assets/images/info.svg';
+import info from '../assets/urban_kit/info.svg';
 import {
   Tab,
   TabView,

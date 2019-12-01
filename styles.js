@@ -137,6 +137,21 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.55,
     shadowRadius: 14.78,
+  },
+  marketCard: {
+    width: normalize(120),
+    height: normalize(120),
+    borderWidth: normalize(5),
+    borderColor: '#03ad79',
+    borderRadius: normalize(5),
+    margin: normalize(10),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  marketCardText: {
+    color: '#fff',
+    fontFamily: 'Courier New',
+    fontSize: normalize(35),
   }
 });
 

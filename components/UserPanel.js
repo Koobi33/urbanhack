@@ -4,7 +4,7 @@ import {Text, Layout} from 'react-native-ui-kitten';
 import {Link} from '../navigation/react-router';
 import styles from '../styles';
 import { useMoney } from '../context/moneyContext';
-import moneyIcon from '../assets/images/valuta.svg';
+import moneyIcon from '../assets/urban_kit/valuta.svg';
 import {normalize} from "react-native-elements";
 
 
@@ -18,7 +18,7 @@ const UserPanel = () => {
         </TouchableOpacity>
         <Link to={'/cabinet'}>
           {/*<Layout>*/}
-          <View style={styles.flexLK}>
+          <View>
             <Text style={styles.simpleTextLK}>
               Личный<br/>
               кабинет
