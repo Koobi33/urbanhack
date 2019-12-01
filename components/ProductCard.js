@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import cloud from '../assets/urban_kit/logo.svg';
 import normalize from "react-native-normalize/src/index";
-import marketList from "../fakeData/marketList";
+import marketList from "../fakeData/market/marketList";
 import styles from "../styles";
 import money from '../assets/urban_kit/valuta.svg';
 
