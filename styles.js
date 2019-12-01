@@ -32,12 +32,30 @@ const styles = StyleSheet.create({
     marginTop: normalize(100),
   },
   simpleText: {
-    color: 'white',
+    color: '#03AD79',
     textAlign: 'center',
     fontWeight: '800',
     textDecorationLine: 'none',
     fontSize: normalize(23),
   },
+  simpleTextLK: {
+    color: '#03ad79',
+    textAlign: 'right',
+    fontWeight: '800',
+    textDecorationLine: 'none',
+    fontSize: normalize(23),
+    fontFamily: 'Courier New',
+  },
+  simpleTextMoney: {
+    color: '#f6eb8c',
+    textAlign: 'center',
+    fontWeight: '800',
+    textDecorationLine: 'none',
+    fontSize: normalize(20),
+    fontFamily: 'Courier New',
+    marginLeft: normalize(5),
+  },
+
   userPanel: {
     flex: 1,
     zIndex: 2,
@@ -45,10 +63,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     position: Platform.OS === 'web' ? 'fixed' : 'absolute',
     top: 0,
-    backgroundColor: '#fff',
-    height: normalize(40),
+    backgroundColor: '#1d1e1f',
+    height: normalize(60),
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
+    paddingLeft: normalize(30),
+    paddingRight: normalize(20),
   },
 
   roleDescriptionCard: {
@@ -67,11 +87,11 @@ const styles = StyleSheet.create({
     margin: normalize(10),
   },
   cardImage: {
-    flex: 1,
+    // flex: 0.7,
     justifyContent: 'center',
     alignItems: 'center',
-    width: normalize(290),
-    height: normalize(200),
+    width: normalize(200),
+    height: normalize(170),
     // padding: normalize(5),
   },
   homeButton: {
