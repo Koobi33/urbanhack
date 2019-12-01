@@ -7,7 +7,6 @@ import {Text} from 'react-native-ui-kitten';
 import HomeScreen from './components/HomeScreen';
 import BusinessScreen from './components/BusinessScreen';
 import UserPanel from './components/UserPanel';
-import TendersParticipating from './components/TendersParticipating';
 import Cabinet from './components/Cabinet';
 import { MoneyContext } from './context/moneyContext';
 import styles from './styles';
@@ -18,47 +17,53 @@ import Partnership from './components/Partnership';
 import MarketList from "./components/MarketList";
 import Market from "./components/Market";
 import ProductCard from "./components/ProductCard";
+import useInterval from '@use-it/interval';
 
-const Integrator = () => <Link to={'/'}><Text>integrator</Text></Link>;
-const Government = () => <Link to={'/'}><Text>government</Text></Link>;
 const User = () => <Link to={'/'}><Text>user</Text></Link>;
 
 
 export default function App() {
-  const [money, setMoney] = useState(5000);
+
+  const [money, setMoney] = useState(50000);
   const [competition, setCompetition] = useState('junior');
   const localCompetition = localStorage.getItem('competition');
+  const [activeProducts, setActiveProducts] = useState([]);
+  const [boughtProducts, setBoughtProducts] = useState([]);
+
   useEffect(() => {
-    console.log(localCompetition);
     if (!localCompetition || localCompetition === '') {
       localStorage.setItem('competition', 'junior');
       setCompetition(localCompetition);
     }
     else {
-      console.log(localCompetition, 'else');
       setCompetition(localCompetition);
     }
   }, []);
 
+  useInterval(() => {
+    const perSecondCost = activeProducts.filter((prod) => prod.isActive === true).reduce((a, b) => a + b.toPay, 0);
+    setMoney(money => money - perSecondCost);
+  }, 1000);
+  useEffect(() => {
+    console.log(activeProducts);
+  }, [activeProducts]);
+
   return (
    <ApplicationProvider mapping={mapping} theme={darkTheme}>
-      <MoneyContext.Provider value={{ money, setMoney, competition, setCompetition }}>
+      <MoneyContext.Provider value={{ money, setMoney, competition, setCompetition, activeProducts, setActiveProducts, boughtProducts, setBoughtProducts }}>
         <Router>
           <SafeAreaView style={styles.appContainer}>
             <UserPanel />
             <View style={styles.appRouterContainer}>
               <Switch>
                 <Route exact path="/business" component={BusinessScreen} />
-                <Route exact path="/business/tenders" component={TendersParticipating} />
-                <Route exact path="/integrator" component={Integrator} />
-                <Route exact path="/government" component={Government} />
                 <Route exact path="/user" component={User} />
                 <Route exact path="/cabinet" component={Cabinet} />
                 <Route exact path="/upload" component={Upload} />
                 <Route exact path="/partnership" component={Partnership} />
                 <Route exact path="/marketlist" component={MarketList} />
                 <Route exact path="/market" component={Market} />
-                <Route exact path="/product" component={ProductCard} />
+                <Route exact path="/product/:id" component={ProductCard} />
                 <Route exact path="/ai" component={Market} />
                 <Route exact path="/iaas" component={Market} />
                 <Route exact path="/paas" component={Market} />
