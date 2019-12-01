@@ -40,7 +40,10 @@ const { setCompetition } = useMoney();
           <Text style={styles.simpleText}>{item.description}</Text>
          <TouchableOpacity
            style={{marginTop: normalize(35)}}
-           onPress={() => setCompetition(item.name)}>
+           onPress={() => {
+             localStorage.setItem('competition', item.name);
+             setCompetition(item.name);
+           }}>
           <Link to={'/market'}><FutureButton name="Выбрать" /></Link>
          </TouchableOpacity>
          </ImageBackground>

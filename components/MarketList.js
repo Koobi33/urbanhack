@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import marketList from "../fakeData/marketList";
+import marketList from "../fakeData/market/marketList";
 import {Icon, List, ListItem} from 'react-native-ui-kitten';
 import {Link} from '../navigation/react-router';
 

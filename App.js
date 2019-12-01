@@ -24,22 +24,23 @@ const User = () => <Link to={'/'}><Text>user</Text></Link>;
 
 
 export default function App() {
-  const [money, setMoney] = useState(0);
+  const [money, setMoney] = useState(5000);
   const [competition, setCompetition] = useState('junior');
-
+  const localCompetition = localStorage.getItem('competition');
   useEffect(() => {
-    const localCompetition = localStorage.getItem('competition');
-    if (!!localCompetition && localCompetition !== '') {
-      console.log(localCompetition, 'test');
+    console.log(localCompetition);
+    if (!localCompetition || localCompetition === '') {
+      localStorage.setItem('competition', 'junior');
+      setCompetition(localCompetition);
+    }
+    else {
+      console.log(localCompetition, 'else');
       setCompetition(localCompetition);
     }
   }, []);
 
-  useEffect(() => {
-    console.log(competition)
-  }, [competition]);
   return (
-    <ApplicationProvider mapping={mapping} theme={lightTheme}>
+   <ApplicationProvider mapping={mapping} theme={lightTheme}>
       <MoneyContext.Provider value={{ money, setMoney, competition, setCompetition }}>
         <Router>
           <SafeAreaView style={styles.appContainer}>
@@ -56,11 +57,15 @@ export default function App() {
                 <Route exact path="/partnership" component={Partnership} />
                 <Route exact path="/marketlist" component={MarketList} />
                 <Route exact path="/market" component={Market} />
+                <Route exact path="/ai" component={Market} />
+                <Route exact path="/iaas" component={Market} />
+                <Route exact path="/paas" component={Market} />
+                <Route exact path="/licenses" component={Market} />
                 <Route component={HomeScreen} />
               </Switch>
             </View>
             <ToHome/>
-            <HelpButton/>
+            {competition === 'middle' || competition === 'junior' ? <HelpButton/> : null}
           </SafeAreaView>
         </Router>
       </MoneyContext.Provider>

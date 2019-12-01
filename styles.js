@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
     marginTop: normalize(100),
   },
   simpleText: {
-    color: '#03AD79',
+    color: 'white',
     textAlign: 'center',
-    fontWeight: '800',
+    fontWeight: '500',
     textDecorationLine: 'none',
     fontSize: normalize(23),
     fontFamily: 'Courier New'
@@ -142,7 +142,8 @@ const styles = StyleSheet.create({
   marketCardText: {
     color: '#fff',
     fontFamily: 'Courier New',
-    fontSize: normalize(35),
+    fontWeight: 800,
+    fontSize: normalize(20),
   }
 });
 
