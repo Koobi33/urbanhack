@@ -4,7 +4,9 @@ const marketList = [
     product: 'huita',
     company: 'Рога и копыта',
     description: 'jkshdfkjak',
-    cost: '190',
+    cost1: 190,
+    cost2: 390,
+    cost3: 790,
     type: 'docker',
   },
   {

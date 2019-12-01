@@ -142,9 +142,52 @@ const styles = StyleSheet.create({
   marketCardText: {
     color: '#fff',
     fontFamily: 'Courier New',
+    // fontSize: normalize(35),
     fontWeight: 800,
     fontSize: normalize(20),
-  }
+  },
+  productName : {
+    color: '#f6eb8c',
+    // textAlign: 'center',
+    fontWeight: '800',
+    textDecorationLine: 'none',
+    fontSize: normalize(24),
+    fontFamily: 'Courier New',
+    marginLeft: normalize(5),
+  },
+  productCompany: {
+    color: '#fff',
+    // textAlign: 'center',
+    fontWeight: '800',
+    textDecorationLine: 'none',
+    fontSize: normalize(22),
+    fontFamily: 'Courier New',
+    marginLeft: normalize(5),
+    marginVertical: normalize(15),
+  },
+  productDescription: {
+    color: '#fff',
+    // textAlign: 'center',
+    fontWeight: '500',
+    textDecorationLine: 'none',
+    fontSize: normalize(20),
+    fontFamily: 'Courier New',
+    marginLeft: normalize(5),
+  },
+  futureBut: {
+    // height: normalize(40),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: normalize(5),
+    borderColor: '#03AD79',
+    borderRadius: normalize(18),
+  },
+  futureButText: {
+    fontFamily: 'Courier New',
+    fontSize: normalize(22),
+    color: '#f6eb8c',
+    fontWeight: '800',
+  },
 });
 
 export default styles;

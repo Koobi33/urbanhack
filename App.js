@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, SafeAreaView } from 'react-native';
-import { mapping, light as lightTheme } from '@eva-design/eva';
+import { mapping, dark as darkTheme } from '@eva-design/eva';
 import { ApplicationProvider } from 'react-native-ui-kitten';
 import { Router, Route, Link, Switch } from "./navigation/react-router";
 import {Text} from 'react-native-ui-kitten';
@@ -17,6 +17,7 @@ import Upload from './components/Upload';
 import Partnership from './components/Partnership';
 import MarketList from "./components/MarketList";
 import Market from "./components/Market";
+import ProductCard from "./components/ProductCard";
 
 const Integrator = () => <Link to={'/'}><Text>integrator</Text></Link>;
 const Government = () => <Link to={'/'}><Text>government</Text></Link>;
@@ -40,7 +41,7 @@ export default function App() {
   }, []);
 
   return (
-   <ApplicationProvider mapping={mapping} theme={lightTheme}>
+   <ApplicationProvider mapping={mapping} theme={darkTheme}>
       <MoneyContext.Provider value={{ money, setMoney, competition, setCompetition }}>
         <Router>
           <SafeAreaView style={styles.appContainer}>
@@ -57,6 +58,7 @@ export default function App() {
                 <Route exact path="/partnership" component={Partnership} />
                 <Route exact path="/marketlist" component={MarketList} />
                 <Route exact path="/market" component={Market} />
+                <Route exact path="/product" component={ProductCard} />
                 <Route exact path="/ai" component={Market} />
                 <Route exact path="/iaas" component={Market} />
                 <Route exact path="/paas" component={Market} />
