@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { View, Text } from 'react-native';
 import {Input, normalize} from 'react-native-elements';
-import styles from '../styles';
+import styles from '../../styles';
 import TouchableOpacity from 'react-native-web/dist/exports/TouchableOpacity';
-import HelpButton from './HelpButton';
+import HelpButton from '../HelpingComponents/HelpButton';
 
 const Partnership = (props) => {
     const [name, setName] = useState('');
@@ -22,13 +22,13 @@ const Partnership = (props) => {
           value={email}
           onChangeText={(text) => setEmail(text)}
           textContentType="emailAddress"
-          placeholder='email'
+          placeholder='Email'
         />
         <Input
           inputStyle={{color: '#f6eb8c', outline: 'none'}}
           value={need}
           onChangeText={(text) => setNeed(text)}
-          placeholder='Потребности'
+          placeholder='Подробности'
         />
         <TouchableOpacity
           style={{marginTop: normalize(20)}}

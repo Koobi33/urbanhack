@@ -1,20 +1,22 @@
 import React, {useState} from 'react';
 import {View, Text, Image, FlatList} from 'react-native';
-import marketList from "../fakeData/market/marketList";
+import marketList from "../../fakeData/market/marketList";
 import normalize from "react-native-normalize/src/index";
-import cloud from "../assets/urban_kit/logo.svg";
-import styles from "../styles";
-import {Link} from "../navigation/react-router";
+import cloud from "../../assets/urban_kit/logo.svg";
+import styles from "../../styles";
+import {Link} from "../../navigation/react-router";
 import {Toggle} from 'react-native-ui-kitten';
-import {useMoney} from '../context/moneyContext';
-import HelpButton from './HelpButton';
+import {useMoney} from '../../context/moneyContext';
+import HelpButton from '../HelpingComponents/HelpButton';
 import TouchableOpacity from "react-native-web/dist/exports/TouchableOpacity";
-import {Modal} from "../modal";
-import StatisticsModal from "./StatisticsModal";
+import {Modal} from "../../modal";
+import StatisticsModal from "../Modals/StatisticsModal";
+import StatisticBoughtModal from '../Modals/StatisticBoughtModal';
 
 
 export default function Cabinet(props) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalBoughtVisible, setModalBoughtVisible] = useState(false);
   const {activeProducts, setActiveProducts, boughtProducts } = useMoney();
 
   return (
@@ -39,7 +41,7 @@ export default function Cabinet(props) {
             </View>
             <View style={{width: normalize(200)}}>
               <Text style={styles.productName}>{data.item.product}</Text>
-              <Text style={styles.productDescription}>{`Текущий тариф: ${data.item.toPay}`}</Text>
+              <Text style={styles.productDescription}>{`Текущий тариф: ${data.item.toPay}₽`}</Text>
             </View>
 
             <View style={{height: normalize(80), justifyContent: 'space-between'}}>
@@ -75,7 +77,7 @@ export default function Cabinet(props) {
               </View>
               <View style={{width: normalize(200)}}>
                 <Text style={styles.productName}>{data.item.product}</Text>
-                <Text style={styles.productDescription}>{`Текущий тариф: ${123}`}</Text>
+                <Text style={styles.productDescription}>{`Текущий тариф: ${data.item.toPay}₽`}</Text>
               </View>
 
               <View style={{alignSelf: 'center'}}>
@@ -101,6 +103,15 @@ export default function Cabinet(props) {
               paddingVertical: normalize(25),
               justifyContent: 'space-around'
             }}>
+              {modalBoughtVisible ?
+                <Modal
+                  animationType="slide"
+                  transparent={false}
+                  visible={modalBoughtVisible}>
+                  <StatisticBoughtModal modalVisible={modalBoughtVisible} setModalVisible={setModalBoughtVisible}/>
+                </Modal>
+                : null
+              }
               <View style={{
                 width: normalize(70),
                 height: normalize(70),
@@ -122,7 +133,7 @@ export default function Cabinet(props) {
 
               <View style={{alignSelf: 'center'}}>
                 {/*<Link to={`/product/${data.item.id}`}>*/}
-                  <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                  <TouchableOpacity onPress={() => setModalBoughtVisible(!modalBoughtVisible)}>
                     <View style={[styles.futureBut, {width: normalize(70), height: normalize(40),}]}>
                       <Text style={styles.futureButTextSmall}>Перейти</Text>
                     </View>

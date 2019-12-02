@@ -2,25 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { View, SafeAreaView } from 'react-native';
 import { mapping, dark as darkTheme } from '@eva-design/eva';
 import { ApplicationProvider } from 'react-native-ui-kitten';
-import { Router, Route, Link, Switch } from "./navigation/react-router";
-import {Text} from 'react-native-ui-kitten';
-import HomeScreen from './components/HomeScreen';
-import BusinessScreen from './components/BusinessScreen';
-import UserPanel from './components/UserPanel';
-import Cabinet from './components/Cabinet';
+import { Router, Route, Switch } from "./navigation/react-router";
+import HomeScreen from './components/Screens/HomeScreen';
+import UserPanel from './components/HelpingComponents/UserPanel';
+import Cabinet from './components/Screens/Cabinet';
 import { MoneyContext } from './context/moneyContext';
 import styles from './styles';
-import ToHome from './components/ToHome';
-import HelpButton from './components/HelpButton';
-import Upload from './components/Upload';
-import Partnership from './components/Partnership';
-import MarketList from "./components/MarketList";
-import Market from "./components/Market";
-import ProductCard from "./components/ProductCard";
+import ToHome from './components/HelpingComponents/ToHome';
+import Partnership from './components/Screens/Partnership';
+import MarketList from "./components/Screens/MarketList";
+import Market from "./components/Screens/Market";
+import ProductCard from "./components/Screens/ProductCard";
 import useInterval from '@use-it/interval';
-
-const User = () => <Link to={'/'}><Text>user</Text></Link>;
-
 
 export default function App() {
 
@@ -56,7 +49,6 @@ export default function App() {
               <Switch>
                 <Route exact path="/cabinet" component={Cabinet} />
                 <Route exact path="/partnership" component={Partnership} />
-                <Route exact path="/upload" component={Upload} />
 
                 <Route exact path="/market" component={Market} />
                 <Route exact path="/ai" component={Market} />

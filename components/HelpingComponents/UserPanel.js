@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
 import {Text } from 'react-native-ui-kitten';
-import {Link} from '../navigation/react-router';
-import styles from '../styles';
-import { useMoney } from '../context/moneyContext';
-import moneyIcon from '../assets/urban_kit/valuta.svg';
+import {Link} from '../../navigation/react-router';
+import styles from '../../styles';
+import { useMoney } from '../../context/moneyContext';
+import moneyIcon from '../../assets/urban_kit/valuta.svg';
 import {normalize} from "react-native-elements";
 
 

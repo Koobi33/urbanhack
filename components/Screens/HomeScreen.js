@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
-import {View, ImageBackground, TouchableHighlight, ScrollView} from 'react-native';
-import competitions from '../fakeData/competitions';
+import {View, ImageBackground } from 'react-native';
+import competitions from '../../fakeData/competitions';
 
-import card from '../assets/urban_kit/1.svg';
-import info from '../assets/urban_kit/2.svg';
-import { Link } from '../navigation/react-router';
+import card from '../../assets/urban_kit/1.svg';
+import info from '../../assets/urban_kit/2.svg';
+import { Link } from '../../navigation/react-router';
 
 import {
   Tab,
   TabView,
   Text
 } from 'react-native-ui-kitten';
-import styles from '../styles';
+import styles from '../../styles';
 import {normalize} from "react-native-elements";
-import {useMoney} from '../context/moneyContext';
-import FutureButton from './FutureButton';
+import {useMoney} from '../../context/moneyContext';
 import TouchableOpacity from 'react-native-web/dist/exports/TouchableOpacity';
-import {Modal} from '../modal';
+import {Modal} from '../../modal';
 import ModalContent from './ModalContent';
 
 export default function HomeScreen() {

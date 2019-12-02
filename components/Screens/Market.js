@@ -1,20 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import {View, TextInput, TouchableOpacity, Text, FlatList} from 'react-native';
 import normalize from "react-native-normalize/src/index";
-import styles from "../styles";
-import top from '../fakeData/Top';
-import {Link} from '../navigation/react-router';
+import styles from "../../styles";
+import top from '../../fakeData/Top';
+import {Link} from '../../navigation/react-router';
 
-import marketCategories from '../fakeData/market/marketCategories';
-import aiCategories from '../fakeData/market/aiCategories';
-import iaasCategories from '../fakeData/market/iaasCategories';
-import licensesCategories from '../fakeData/market/licensesCategories';
-import paasCategories from '../fakeData/market/paasCategories';
+import marketCategories from '../../fakeData/market/marketCategories';
+import aiCategories from '../../fakeData/market/aiCategories';
+import iaasCategories from '../../fakeData/market/iaasCategories';
+import licensesCategories from '../../fakeData/market/licensesCategories';
+import paasCategories from '../../fakeData/market/paasCategories';
 
-import {useMoney} from '../context/moneyContext';
-import {Modal} from '../modal';
+import {useMoney} from '../../context/moneyContext';
+import {Modal} from '../../modal';
 import ModalContent from './ModalContent';
-import HelpButton from './HelpButton';
+import HelpButton from '../HelpingComponents/HelpButton';
 
 export default function Market(props) {
   const {competition} = useMoney();

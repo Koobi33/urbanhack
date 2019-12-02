@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Image, Text, View} from 'react-native';
 import normalize from 'react-native-normalize/src/index';
-import faceRecognition from '../assets/urban_kit/ezgif.com-optimize.gif';
-import styles from '../styles';
+import faceRecognition from '../../assets/urban_kit/ezgif.com-optimize.gif';
+import styles from '../../styles';
 import useTimeout from 'use-timeout';
 
 const PayModal = (props) => {

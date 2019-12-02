@@ -1,14 +1,16 @@
 import React from 'react';
 import {View, Text, FlatList, Image} from 'react-native';
-import marketList from "../fakeData/market/marketList";
-import cloud from '../assets/urban_kit/logo.svg';
+import marketList from "../../fakeData/market/marketList";
+import cloud from '../../assets/urban_kit/logo.svg';
 import normalize from "react-native-normalize/src/index";
-import styles from "../styles";
-import {Link} from '../navigation/react-router';
-import HelpButton from './HelpButton';
+import styles from "../../styles";
+import {Link} from '../../navigation/react-router';
+import HelpButton from '../HelpingComponents/HelpButton';
+import TouchableOpacity from 'react-native-web/dist/exports/TouchableOpacity';
 
 export default function Market(props) {
   return(
+    <View style={{flex: 1}}>
     <FlatList
       data={marketList}
       renderItem={(data) => {
@@ -28,10 +30,18 @@ export default function Market(props) {
               </View>
             </Link>
             </View>
-            <HelpButton {...props} />
           </View>
         );
       }}
     />
+      <Link to={'/partnership'}>
+        <TouchableOpacity>
+          <View style={[styles.plusButton]}>
+            <Text>+</Text>
+          </View>
+        </TouchableOpacity>
+      </Link>
+  <HelpButton {...props} />
+    </View>
   );
 }

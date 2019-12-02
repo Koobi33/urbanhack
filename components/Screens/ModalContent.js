@@ -1,10 +1,8 @@
 import React from 'react';
-import {View, Image, Text, TouchableHighlight} from 'react-native';
-import gif from '../assets/urban_kit/gif/gif_irina.gif';
-import FutureButton from './FutureButton';
+import { View, Image, Text } from 'react-native';
+import gif from '../../assets/urban_kit/gif/gif_irina.gif';
 import normalize from 'react-native-normalize/src/index';
-import {TouchableWithoutFeedback} from 'react-native-web';
-import styles from '../styles';
+import styles from '../../styles';
 import TouchableOpacity from 'react-native-web/dist/exports/TouchableOpacity';
 
 const ModalContent = (props) =>  {
