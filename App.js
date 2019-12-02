@@ -14,6 +14,7 @@ import MarketList from "./components/Screens/MarketList";
 import Market from "./components/Screens/Market";
 import ProductCard from "./components/Screens/ProductCard";
 import useInterval from '@use-it/interval';
+import Chat from './components/Screens/Chat'
 
 export default function App() {
 
@@ -60,10 +61,11 @@ export default function App() {
 
                 <Route exact path="/product/:id" component={ProductCard} />
 
+                <Route exact path="/chat" component={Chat} />
+
                 <Route component={HomeScreen} />
               </Switch>
             </View>
-            <ToHome/>
           </SafeAreaView>
         </Router>
       </MoneyContext.Provider>

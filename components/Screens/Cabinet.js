@@ -12,6 +12,7 @@ import TouchableOpacity from "react-native-web/dist/exports/TouchableOpacity";
 import {Modal} from "../../modal";
 import StatisticsModal from "../Modals/StatisticsModal";
 import StatisticBoughtModal from '../Modals/StatisticBoughtModal';
+import ToHome from '../HelpingComponents/ToHome';
 
 
 export default function Cabinet(props) {
@@ -20,7 +21,7 @@ export default function Cabinet(props) {
   const {activeProducts, setActiveProducts, boughtProducts } = useMoney();
 
   return (
-    <View>
+    <View style={{flex: 1, marginBottom: normalize(30)}}>
       {modalVisible ?
         <Modal
           animationType="slide"
@@ -142,6 +143,7 @@ export default function Cabinet(props) {
               </View>
             </View>)
         }} />
+      <ToHome/>
       <HelpButton {...props} />
     </View>
   );

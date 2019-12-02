@@ -15,6 +15,7 @@ import {useMoney} from '../../context/moneyContext';
 import {Modal} from '../../modal';
 import ModalContent from './ModalContent';
 import HelpButton from '../HelpingComponents/HelpButton';
+import ToHome from '../HelpingComponents/ToHome';
 
 export default function Market(props) {
   const {competition} = useMoney();
@@ -95,6 +96,7 @@ useEffect(() => {
           </Link>
         }
       />
+        <ToHome/>
         <HelpButton {...props} />
       </View>
     </View>

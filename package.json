@@ -37,6 +37,7 @@
     "react-native-web-swiper": "^2.1.0",
     "react-navigation": "^3.12.0",
     "react-router-dom": "^5.1.2",
+    "react-web-gifted-chat": "^0.6.7",
     "use-timeout": "^1.1.0",
     "victory": "^33.1.5",
     "victory-native": "^33.0.0"

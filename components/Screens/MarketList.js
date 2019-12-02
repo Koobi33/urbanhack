@@ -7,6 +7,7 @@ import styles from "../../styles";
 import {Link} from '../../navigation/react-router';
 import HelpButton from '../HelpingComponents/HelpButton';
 import TouchableOpacity from 'react-native-web/dist/exports/TouchableOpacity';
+import ToHome from '../HelpingComponents/ToHome';
 
 export default function Market(props) {
   return(
@@ -41,6 +42,7 @@ export default function Market(props) {
           </View>
         </TouchableOpacity>
       </Link>
+      <ToHome/>
   <HelpButton {...props} />
     </View>
   );

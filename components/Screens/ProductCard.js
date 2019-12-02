@@ -13,6 +13,7 @@ import {Link} from '../../navigation/react-router';
 import ModalContent from './ModalContent';
 import PayModal from '../Modals/PayModal';
 import HelpButton from '../HelpingComponents/HelpButton';
+import ToHome from '../HelpingComponents/ToHome';
 
 
 export default function ProductCard(props) {
@@ -127,6 +128,19 @@ export default function ProductCard(props) {
             <Text style={styles.futureButText}>Пробная версия</Text>
           </View>
         </TouchableOpacity>
+        <Link to={'/chat'}>
+          <TouchableOpacity>
+            <View style={[styles.futureBut, {
+              width: normalize(300),
+              height: normalize(40),
+              alignSelf: 'center',
+              marginTop: normalize(20)
+            }]}>
+              <Text style={styles.futureButText}>Чат со специалистом</Text>
+            </View>
+          </TouchableOpacity>
+        </Link>
+        <ToHome/>
         <HelpButton {...props} />
         <View style={{flexDirection: 'row', justifyContent: 'space-around', marginVertical: normalize(20)}}>
           {costArr}

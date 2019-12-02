@@ -4,6 +4,7 @@ import {Input, normalize} from 'react-native-elements';
 import styles from '../../styles';
 import TouchableOpacity from 'react-native-web/dist/exports/TouchableOpacity';
 import HelpButton from '../HelpingComponents/HelpButton';
+import ToHome from '../HelpingComponents/ToHome';
 
 const Partnership = (props) => {
     const [name, setName] = useState('');
@@ -39,6 +40,7 @@ const Partnership = (props) => {
                 </a>
             </View>
         </TouchableOpacity>
+          <ToHome/>
           <HelpButton {...props} />
       </View>
     );
