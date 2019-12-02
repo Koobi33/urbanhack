@@ -49,6 +49,15 @@ export default function Cabinet(props) {
         </Modal>
         : null
       }
+      {modalBoughtVisible ?
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={modalBoughtVisible}>
+          <StatisticBoughtModal modalVisible={modalBoughtVisible} setModalVisible={setModalBoughtVisible}/>
+        </Modal>
+        : null
+      }
       <Text style={[styles.productCompany, {marginLeft: normalize(20)}]}>Контейнеры</Text>
       <FlatList
         data={activeProducts}
@@ -122,15 +131,7 @@ export default function Cabinet(props) {
               paddingVertical: normalize(25),
               justifyContent: 'space-around'
             }}>
-              {modalBoughtVisible ?
-                <Modal
-                  animationType="slide"
-                  transparent={false}
-                  visible={modalBoughtVisible}>
-                  <StatisticBoughtModal modalVisible={modalBoughtVisible} setModalVisible={setModalBoughtVisible}/>
-                </Modal>
-                : null
-              }
+
               <View style={{
                 width: normalize(70),
                 height: normalize(70),
