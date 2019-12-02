@@ -4,7 +4,6 @@ import {VictoryChart, VictoryLine, VictoryTheme, VictoryBar} from 'victory';
 import styles from "../../styles";
 import {normalize} from "react-native-elements";
 
-
 export default function StatisticBoughtModal(props) {
   const {modalVisible, setModalVisible} = props;
   return (

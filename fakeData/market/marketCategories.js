@@ -2,25 +2,25 @@ const marketCategories = {
   junior: [
     {
       id: 0,
-      name: 'AIj',
+      name: 'ИИ',
       link: 'ai'
     }
     ,
     {
       id: 1,
-      name: 'PAAS',
+      name: 'ПЛАТФОРМЫ',
       link: 'paas'
     }
     ,
     {
       id: 2,
-      name: 'IAAS',
+      name: 'ЖЕЛЕЗО',
       link: 'iaas'
     }
     ,
     {
       id: 3,
-      name: 'LICENSES',
+      name: 'ЛИЦЕНЗИИ',
       link: 'licenses'
     }
         ],
@@ -28,7 +28,7 @@ const marketCategories = {
   middle: [
     {
       id: 0,
-      name: 'AIm',
+      name: 'AI',
       link: 'ai'
     }
     ,
@@ -53,7 +53,7 @@ const marketCategories = {
   senior: [
     {
       id: 0,
-      name: 'AIs',
+      name: 'AI',
       link: 'ai'
     }
     ,

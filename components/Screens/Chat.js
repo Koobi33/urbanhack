@@ -2,7 +2,7 @@ import React from 'react';
 import { GiftedChat } from 'react-web-gifted-chat';
 import View from 'react-native-web/dist/exports/View';
 import ToHome from '../HelpingComponents/ToHome';
-import HelpButton from '../HelpingComponents/HelpButton';
+import GoBack from '../HelpingComponents/GoBack';
 
 class Chat extends React.Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class Chat extends React.Component {
           id: 1,
         }}
       />
-        <HelpButton {...this.props}/>
+        <GoBack {...this.props}/>
       </View>
     );
   }

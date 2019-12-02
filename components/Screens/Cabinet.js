@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, Image, FlatList} from 'react-native';
 import marketList from "../../fakeData/market/marketList";
 import normalize from "react-native-normalize/src/index";
@@ -7,21 +7,39 @@ import styles from "../../styles";
 import {Link} from "../../navigation/react-router";
 import {Toggle} from 'react-native-ui-kitten';
 import {useMoney} from '../../context/moneyContext';
-import HelpButton from '../HelpingComponents/HelpButton';
+import GoBack from '../HelpingComponents/GoBack';
 import TouchableOpacity from "react-native-web/dist/exports/TouchableOpacity";
 import {Modal} from "../../modal";
 import StatisticsModal from "../Modals/StatisticsModal";
 import StatisticBoughtModal from '../Modals/StatisticBoughtModal';
 import ToHome from '../HelpingComponents/ToHome';
+import HelpMiddle from '../HelpingComponents/HelpMiddle';
+import ModalContent from './ModalContent';
 
 
 export default function Cabinet(props) {
+  const {activeProducts, setActiveProducts, boughtProducts, competition} = useMoney();
+
+  useEffect(() => {
+    if (competition === 'junior') {
+      setHelpModalVisible(true);
+    }
+  }, [competition, props.location]);
+
   const [modalVisible, setModalVisible] = useState(false);
   const [modalBoughtVisible, setModalBoughtVisible] = useState(false);
-  const {activeProducts, setActiveProducts, boughtProducts } = useMoney();
+  const [helpModal, setHelpModalVisible] = useState(false);
 
   return (
     <View style={{flex: 1, marginBottom: normalize(30)}}>
+      <Modal
+        animationType="slide"
+        transparent={false}
+        visible={helpModal}>
+        <ModalContent
+          text="В личном кабинете можно видеть купленные услуги, остановить их использование, а так же просмотреть статистику по размещенным вами продуктам"
+          close={() => setHelpModalVisible(!helpModal)}/>
+      </Modal>
       {modalVisible ?
         <Modal
           animationType="slide"
@@ -143,8 +161,9 @@ export default function Cabinet(props) {
               </View>
             </View>)
         }} />
+      {competition === 'middle' ?  <HelpMiddle isOpen={helpModal} setOpen={setHelpModalVisible}/> : null }
       <ToHome/>
-      <HelpButton {...props} />
+      <GoBack {...props} />
     </View>
   );
 }

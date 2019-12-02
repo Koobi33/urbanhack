@@ -2,25 +2,25 @@ const paasCategories = {
   junior: [
     {
       id: 0,
-      name: 'paas1',
+      name: 'WINDOWS',
       link: 'marketlist'
     }
     ,
     {
       id: 1,
-      name: 'paas2',
+      name: 'LINUX',
       link: 'marketlist'
     }
     ,
     {
       id: 2,
-      name: 'paas3',
+      name: 'SQL',
       link: 'marketlist'
     }
     ,
     {
       id: 3,
-      name: 'paas4',
+      name: 'MONGODB',
       link: 'marketlist'
     }
   ],
@@ -28,50 +28,50 @@ const paasCategories = {
   middle: [
     {
       id: 0,
-      name: 'paas1',
+      name: 'WINDOWS',
       link: 'marketlist'
     }
     ,
     {
       id: 1,
-      name: 'paas2',
+      name: 'LINUX',
       link: 'marketlist'
     }
     ,
     {
       id: 2,
-      name: 'paas3',
+      name: 'SQL',
       link: 'marketlist'
     }
     ,
     {
       id: 3,
-      name: 'paas4',
+      name: 'MONGODB',
       link: 'marketlist'
     }
   ],
   senior: [
     {
       id: 0,
-      name: 'paas1',
+      name: 'WINDOWS',
       link: 'marketlist'
     }
     ,
     {
       id: 1,
-      name: 'paas2',
+      name: 'LINUX',
       link: 'marketlist'
     }
     ,
     {
       id: 2,
-      name: 'paas3',
+      name: 'SQL',
       link: 'marketlist'
     }
     ,
     {
       id: 3,
-      name: 'paas4',
+      name: 'MONGODB',
       link: 'marketlist'
     }
   ]

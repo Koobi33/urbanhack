@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import {Input, normalize} from 'react-native-elements';
 import styles from '../../styles';
 import TouchableOpacity from 'react-native-web/dist/exports/TouchableOpacity';
-import HelpButton from '../HelpingComponents/HelpButton';
+import GoBack from '../HelpingComponents/GoBack';
 import ToHome from '../HelpingComponents/ToHome';
 
 const Partnership = (props) => {
@@ -41,7 +41,7 @@ const Partnership = (props) => {
             </View>
         </TouchableOpacity>
           <ToHome/>
-          <HelpButton {...props} />
+          <GoBack {...props} />
       </View>
     );
 };

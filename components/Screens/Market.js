@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {View, TextInput, TouchableOpacity, Text, FlatList} from 'react-native';
 import normalize from "react-native-normalize/src/index";
 import styles from "../../styles";
-import top from '../../fakeData/Top';
+import top from '../../fakeData/top';
 import {Link} from '../../navigation/react-router';
 
 import marketCategories from '../../fakeData/market/marketCategories';
@@ -14,13 +14,15 @@ import paasCategories from '../../fakeData/market/paasCategories';
 import {useMoney} from '../../context/moneyContext';
 import {Modal} from '../../modal';
 import ModalContent from './ModalContent';
-import HelpButton from '../HelpingComponents/HelpButton';
+import GoBack from '../HelpingComponents/GoBack';
 import ToHome from '../HelpingComponents/ToHome';
+import HelpMiddle from '../HelpingComponents/HelpMiddle';
 
 export default function Market(props) {
   const {competition} = useMoney();
   const [categories, setCategories] = useState(marketCategories);
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalTwo, setModalTwo] = useState(false);
   const [categoriesButtons, setCategoriesButtons] = useState(categories[competition].map((item) =>
     <Link to={item.link}>
       <TouchableOpacity style={styles.marketCard}>
@@ -63,8 +65,14 @@ useEffect(() => {
   }, [props.location]);
   useEffect(() => {
     if (competition === 'junior') {
-      setModalVisible(true);
+      if (props.location.pathname === '/market') {
+        setModalVisible(true);
+      } else {
+        setModalTwo(true);
+      }
+
     }
+
   }, [competition, props.location]);
   return (
     <View style={{flex: 1, marginTop: normalize(7)}}>
@@ -72,7 +80,13 @@ useEffect(() => {
         animationType="slide"
         transparent={false}
         visible={modalVisible}>
-        <ModalContent text="ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf " close={() => setModalVisible(!modalVisible)}/>
+        <ModalContent text="Здесь ты видишь основные категории и лучшие подборки для тебя" close={() => setModalVisible(!modalVisible)}/>
+      </Modal>
+      <Modal
+        animationType="slide"
+        transparent={false}
+        visible={modalTwo}>
+        <ModalContent text="Здесь ты видишь подробные категории и лучшие подборки среди них" close={() => setModalTwo(!modalTwo)}/>
       </Modal>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: normalize(15)}}>
         <TextInput placeholder='Поиск...' style={{width: '80%', height: normalize(30), backgroundColor: '#fff', borderRadius: normalize(15), paddingHorizontal: normalize(15), outline: 'none'}}/>
@@ -82,6 +96,7 @@ useEffect(() => {
       </View>
 
       <View style={{marginHorizontal: normalize(20)}}>
+        {/*<Text style={styles.futureButTextSmall}>Подборка для вас</Text>*/}
       <FlatList
         horizontal={true}
         data={top}
@@ -96,8 +111,9 @@ useEffect(() => {
           </Link>
         }
       />
+        {competition === 'middle' ?  <HelpMiddle isOpen={modalVisible} setOpen={setModalVisible}/> : null }
         <ToHome/>
-        <HelpButton {...props} />
+        <GoBack {...props} />
       </View>
     </View>
   );

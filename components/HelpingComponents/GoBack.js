@@ -8,18 +8,18 @@ import {TouchableOpacity} from 'react-native-web';
 
 
 
-const HelpButton = (props) => {
+const GoBack = (props) => {
   const menshe = '<';
   const {history} = props;
   return (
 <TouchableOpacity onPress={() => {
  history.goBack();
 }}>
-  <View style={styles.helpButton}>
+  <View style={styles.goBack}>
     <Text>{menshe}</Text>
     </View>
 </TouchableOpacity>
   );
 };
 
-export default HelpButton;
+export default GoBack;

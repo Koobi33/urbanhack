@@ -8,7 +8,6 @@ import UserPanel from './components/HelpingComponents/UserPanel';
 import Cabinet from './components/Screens/Cabinet';
 import { MoneyContext } from './context/moneyContext';
 import styles from './styles';
-import ToHome from './components/HelpingComponents/ToHome';
 import Partnership from './components/Screens/Partnership';
 import MarketList from "./components/Screens/MarketList";
 import Market from "./components/Screens/Market";

@@ -1,17 +1,34 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList, Image} from 'react-native';
 import marketList from "../../fakeData/market/marketList";
 import cloud from '../../assets/urban_kit/logo.svg';
 import normalize from "react-native-normalize/src/index";
 import styles from "../../styles";
 import {Link} from '../../navigation/react-router';
-import HelpButton from '../HelpingComponents/HelpButton';
+import GoBack from '../HelpingComponents/GoBack';
 import TouchableOpacity from 'react-native-web/dist/exports/TouchableOpacity';
 import ToHome from '../HelpingComponents/ToHome';
+import HelpMiddle from '../HelpingComponents/HelpMiddle';
+import {useMoney} from '../../context/moneyContext';
+import {Modal} from '../../modal';
+import ModalContent from './ModalContent';
 
-export default function Market(props) {
+export default function MarketList(props) {
+  const {competition} = useMoney();
+  const [modalVisible, setModalVisible] = useState(false);
+  useEffect(() => {
+    if (competition === 'junior') {
+      setModalVisible(true);
+    }
+  }, [competition, props.location]);
   return(
     <View style={{flex: 1}}>
+      <Modal
+        animationType="slide"
+        transparent={false}
+        visible={modalVisible}>
+        <ModalContent text="Это список приложений в этой категории. Внизу ты можешь добавить свое собственное приложение или услугу, нажав на '+'" close={() => setModalVisible(!modalVisible)}/>
+      </Modal>
     <FlatList
       data={marketList}
       renderItem={(data) => {
@@ -42,8 +59,9 @@ export default function Market(props) {
           </View>
         </TouchableOpacity>
       </Link>
+      {competition === 'middle' ?  <HelpMiddle isOpen={modalVisible} setOpen={setModalVisible}/> : null }
       <ToHome/>
-  <HelpButton {...props} />
+  <GoBack {...props} />
     </View>
   );
 }

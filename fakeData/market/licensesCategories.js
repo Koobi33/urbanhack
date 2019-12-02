@@ -2,25 +2,25 @@ const licensesCategories = {
   junior: [
     {
       id: 0,
-      name: 'licenses1',
+      name: 'FIREWALL',
       link: 'marketlist'
     }
     ,
     {
       id: 1,
-      name: 'licenses2',
+      name: 'ANTIVIRUS',
       link: 'marketlist'
     }
     ,
     {
       id: 2,
-      name: 'licenses3',
+      name: 'ANTIFROD',
       link: 'marketlist'
     }
     ,
     {
       id: 3,
-      name: 'licenses4',
+      name: 'DDOS',
       link: 'marketlist'
     }
   ],
@@ -28,50 +28,50 @@ const licensesCategories = {
   middle: [
     {
       id: 0,
-      name: 'licenses1',
+      name: 'FIREWALL',
       link: 'marketlist'
     }
     ,
     {
       id: 1,
-      name: 'licenses2',
+      name: 'ANTIVIRUS',
       link: 'marketlist'
     }
     ,
     {
       id: 2,
-      name: 'licenses3',
+      name: 'ANTIFROD',
       link: 'marketlist'
     }
     ,
     {
       id: 3,
-      name: 'licenses4',
+      name: 'DDOS',
       link: 'marketlist'
     }
   ],
   senior: [
     {
       id: 0,
-      name: 'licenses1',
+      name: 'FIREWALL',
       link: 'marketlist'
     }
     ,
     {
       id: 1,
-      name: 'licenses2',
+      name: 'ANTIVIRUS',
       link: 'marketlist'
     }
     ,
     {
       id: 2,
-      name: 'licenses3',
+      name: 'ANTIFROD',
       link: 'marketlist'
     }
     ,
     {
       id: 3,
-      name: 'licenses4',
+      name: 'DDOS',
       link: 'marketlist'
     }
   ]

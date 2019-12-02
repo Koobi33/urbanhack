@@ -2,17 +2,17 @@ const competitions = [
   {
     id: '0',
     name: 'junior',
-    description: 'Описание роли junior Ut pharetra sit amet aliquam id. Arcusadadadae awdawd awdawd '
+    description: 'Запустите обучающий курс SberAcademy на платформе SberPlace'
   },
   {
     id: '1',
     name: 'middle',
-    description: 'Описание роли middle Ut pharetra sit amet aliquam id. Arcusadadadae awdawd awdawd '
+    description: 'Хочу посмотреть весь ассортимент продуктов на платформе SberPlace'
   },
   {
     id: '2',
     name: 'senior',
-    description: 'Описание роли senior Ut pharetra sit amet aliquam id. Arcusadadadae awdawd awdawd'
+    description: 'Спасибо, я знаю, что мне нужно и сейчас пришел за конкретным продуктом'
   },
 ];
 

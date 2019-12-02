@@ -17,8 +17,10 @@ import {useMoney} from '../../context/moneyContext';
 import TouchableOpacity from 'react-native-web/dist/exports/TouchableOpacity';
 import {Modal} from '../../modal';
 import ModalContent from './ModalContent';
+import HelpMiddle from '../HelpingComponents/HelpMiddle';
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
+  const {competition} = useMoney();
 const { setCompetition } = useMoney();
   const tabCards = competitions.map((item) => {
     return (
@@ -67,7 +69,7 @@ const { setCompetition } = useMoney();
         animationType="slide"
         transparent={false}
         visible={modalVisible}>
-        <ModalContent text="ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf " close={() => setModalVisible(!modalVisible)}/>
+        <ModalContent text="Привет, ты в SberPlace! Выбери уровень владения нашей платформой с помощью свайпа" close={() => setModalVisible(!modalVisible)}/>
       </Modal>
     <TabView
       tabBarStyle={{overflow: 'hidden', backgroundColor: '#1D1E1F'}}
@@ -79,6 +81,7 @@ const { setCompetition } = useMoney();
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', width: normalize(285), marginTop: normalize(5), alignSelf: 'center'}}>
         {selectedCard}
       </View>
+      {competition === 'middle' ?  <HelpMiddle isOpen={modalVisible} setOpen={setModalVisible}/> : null }
     </View>
   );
 }

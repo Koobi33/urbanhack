@@ -12,7 +12,7 @@ import {Modal} from '../../modal';
 import {Link} from '../../navigation/react-router';
 import ModalContent from './ModalContent';
 import PayModal from '../Modals/PayModal';
-import HelpButton from '../HelpingComponents/HelpButton';
+import GoBack from '../HelpingComponents/GoBack';
 import ToHome from '../HelpingComponents/ToHome';
 
 
@@ -76,7 +76,7 @@ export default function ProductCard(props) {
         transparent={false}
         visible={modalVisible}>
         <ModalContent
-          text="ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf ksjadfnk sf "
+          text="Это карточка продукта. Можно выбрать тарифный план, взять пробную версию и связаться с консультантом"
           close={() => setModalVisible(!modalVisible)}/>
       </Modal>
 
@@ -141,7 +141,7 @@ export default function ProductCard(props) {
           </TouchableOpacity>
         </Link>
         <ToHome/>
-        <HelpButton {...props} />
+        <GoBack {...props} />
         <View style={{flexDirection: 'row', justifyContent: 'space-around', marginVertical: normalize(20)}}>
           {costArr}
         </View>

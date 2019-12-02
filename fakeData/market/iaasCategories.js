@@ -2,25 +2,25 @@ const iaasCategories = {
   junior: [
     {
       id: 0,
-      name: 'iaas1',
+      name: '2 core',
       link: 'marketlist'
     }
     ,
     {
       id: 1,
-      name: 'iaas2',
+      name: '4 core',
       link: 'marketlist'
     }
     ,
     {
       id: 2,
-      name: 'iaas3',
+      name: '8 core',
       link: 'marketlist'
     }
     ,
     {
       id: 3,
-      name: 'iaas4',
+      name: 'MAX',
       link: 'marketlist'
     }
   ],
@@ -28,50 +28,50 @@ const iaasCategories = {
   middle: [
     {
       id: 0,
-      name: 'iaas1',
+      name: '2 core',
       link: 'marketlist'
     }
     ,
     {
       id: 1,
-      name: 'iaas2',
+      name: '4 core',
       link: 'marketlist'
     }
     ,
     {
       id: 2,
-      name: 'iaas3',
+      name: '8 core',
       link: 'marketlist'
     }
     ,
     {
       id: 3,
-      name: 'iaas4',
+      name: 'MAX',
       link: 'marketlist'
     }
   ],
   senior: [
     {
       id: 0,
-      name: 'iaas1',
+      name: '2 core',
       link: 'marketlist'
     }
     ,
     {
       id: 1,
-      name: 'iaas2',
+      name: '4 core',
       link: 'marketlist'
     }
     ,
     {
       id: 2,
-      name: 'iaas3',
+      name: '8 core',
       link: 'marketlist'
     }
     ,
     {
       id: 3,
-      name: 'iaas4',
+      name: 'MAX',
       link: 'marketlist'
     }
   ]
