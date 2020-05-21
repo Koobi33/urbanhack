@@ -27,7 +27,7 @@ export default function MarketList(props) {
         animationType="slide"
         transparent={false}
         visible={modalVisible}>
-        <ModalContent text="Это список приложений в этой категории. Внизу ты можешь добавить свое собственное приложение или услугу, нажав на '+'" close={() => setModalVisible(!modalVisible)}/>
+        <ModalContent text="This is a list of apps in this category. At the bottom, you can add your own app or service by clicking on '+'" close={() => setModalVisible(!modalVisible)}/>
       </Modal>
     <FlatList
       data={marketList}
@@ -44,7 +44,7 @@ export default function MarketList(props) {
             <View style={{alignSelf: 'center'}}>
             <Link to={`/product/${data.item.id}`}>
               <View style={[styles.futureBut, {width: normalize(70), height: normalize(40),}]}>
-                <Text style={styles.futureButTextSmall}>Перейти</Text>
+                <Text style={styles.futureButTextSmall}>Go over</Text>
               </View>
             </Link>
             </View>

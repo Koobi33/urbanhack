@@ -80,23 +80,23 @@ useEffect(() => {
         animationType="slide"
         transparent={false}
         visible={modalVisible}>
-        <ModalContent text="Здесь ты видишь основные категории и лучшие подборки для тебя" close={() => setModalVisible(!modalVisible)}/>
+        <ModalContent text="Here you can see the main categories and the best selections for you" close={() => setModalVisible(!modalVisible)}/>
       </Modal>
       <Modal
         animationType="slide"
         transparent={false}
         visible={modalTwo}>
-        <ModalContent text="Здесь ты видишь подробные категории и лучшие подборки среди них" close={() => setModalTwo(!modalTwo)}/>
+        <ModalContent text="Here you can see detailed categories and the best selections among them" close={() => setModalTwo(!modalTwo)}/>
       </Modal>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: normalize(15)}}>
-        <TextInput placeholder='Поиск...' style={{width: '80%', height: normalize(30), backgroundColor: '#fff', borderRadius: normalize(15), paddingHorizontal: normalize(15), outline: 'none'}}/>
+        <TextInput placeholder='Searching...' style={{width: '80%', height: normalize(30), backgroundColor: '#fff', borderRadius: normalize(15), paddingHorizontal: normalize(15), outline: 'none'}}/>
       </View>
       <View style={{flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
         {categoriesButtons}
       </View>
 
       <View style={{marginHorizontal: normalize(20)}}>
-        {/*<Text style={styles.futureButTextSmall}>Подборка для вас</Text>*/}
+        {/*<Text style={styles.futureButTextSmall}>A selection for you</Text>*/}
       <FlatList
         horizontal={true}
         data={top}

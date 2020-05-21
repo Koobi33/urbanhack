@@ -5,25 +5,25 @@ import user from '../assets/images/user-card-cover.jpg';
 const roles = [
   {
     id: 0,
-    name: 'Бизнес',
+    name: 'Business',
     image: business,
     link: '/business'
   },
   {
     id: 1,
-    name: 'Интегратор',
+    name: 'Integrator',
     image: integrator,
       link: '/integrator'
   },
   {
     id: 2,
-    name: 'Правительство',
+    name: 'Government',
     image: government,
       link: '/government'
   },
   {
     id: 3,
-    name: 'Клиент',
+    name: 'Customer',
     image: user,
       link: '/user'
   }

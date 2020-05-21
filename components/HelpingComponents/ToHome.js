@@ -7,7 +7,7 @@ const ToHome = () => {
     return (
       <Link to={'/'} >
         <View style={styles.homeButton}>
-          <Text>Дом</Text>
+          <Text>Home</Text>
         </View>
       </Link>
     );

@@ -16,7 +16,7 @@ const ModalContent = (props) =>  {
             style={{alignSelf: 'center', marginTop: normalize(10)}}
            onPress={close}>
             <View style={[styles.futureBut, {width: normalize(240), height: normalize(40), alignSelf: 'center'}]}>
-              <Text style={styles.futureButText}>Понятно</Text>
+              <Text style={styles.futureButText}>Clear</Text>
             </View>
         </TouchableOpacity>
       </View>

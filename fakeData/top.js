@@ -1,15 +1,15 @@
 const top = [
   {
     id: '0',
-    title: 'Лучшее для вас',
+    title: 'The Best for you',
   },
   {
     id: '1',
-    title: 'Самые популярные',
+    title: 'The Most popular',
   },
   {
     id: '2',
-    title: 'ТОП 10 контейнеров',
+    title: 'TOP 10 containers',
   },
 ];
 export default top;

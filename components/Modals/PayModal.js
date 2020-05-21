@@ -11,7 +11,7 @@ const PayModal = (props) => {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignContent: 'center', backgroundColor: '#000'}}>
         <Image style={{height: normalize(100), alignSelf: 'center',  width: normalize(100)}} source={faceRecognition} />
-        <Text style={styles.simpleText}>Авторизация платежа в Сбербанк ID....</Text>
+        <Text style={styles.simpleText}>Authorization of payment in Sberbank ID....</Text>
       </View>
     );
 };

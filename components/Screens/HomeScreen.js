@@ -48,7 +48,7 @@ const { setCompetition } = useMoney();
            }}>
           <Link to={'/market'}>
             <View style={[styles.futureBut, {width: normalize(240), height: normalize(40), alignSelf: 'center'}]}>
-              <Text style={styles.futureButText}>Выбрать</Text>
+              <Text style={styles.futureButText}>Choose</Text>
             </View>
           </Link>
          </TouchableOpacity>
@@ -69,7 +69,7 @@ const { setCompetition } = useMoney();
         animationType="slide"
         transparent={false}
         visible={modalVisible}>
-        <ModalContent text="Привет, ты в SberPlace! Выбери уровень владения нашей платформой с помощью свайпа" close={() => setModalVisible(!modalVisible)}/>
+        <ModalContent text="Hello, you are in SberPlace! Choose the level of ownership of our platform using a swipe" close={() => setModalVisible(!modalVisible)}/>
       </Modal>
     <TabView
       tabBarStyle={{overflow: 'hidden', backgroundColor: '#1D1E1F'}}
