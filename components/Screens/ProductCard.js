@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import cloud from '../../assets/urban_kit/logo.svg';
-import moneyIcon from '../../assets/urban_kit/valuta.svg';
+import cloud from '../../assets/urban_kit/logo.png';
+import moneyIcon from '../../assets/urban_kit/valuta.png';
 import styles from "../../styles";
 import normalize from "react-native-normalize/src/index";
 import marketList from "../../fakeData/market/marketList";
@@ -8,7 +8,7 @@ import marketList from "../../fakeData/market/marketList";
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 import {useMoney} from '../../context/moneyContext';
-import {Modal} from '../../modal';
+import {Modal} from '../../modal/modal';
 import {Link} from '../../navigation/react-router';
 import ModalContent from './ModalContent';
 import PayModal from '../Modals/PayModal';
@@ -69,9 +69,10 @@ export default function ProductCard(props) {
     )
   });
   return (
-    <View style={{paddingHorizontal: normalize(15), marginTop: normalize(15)}}>
+    <View style={{paddingHorizontal: normalize(15), marginTop: normalize(80)}}>
 
       <Modal
+        style={{ margin: 0 }}
         animationType="slide"
         transparent={false}
         visible={modalVisible}>
@@ -80,12 +81,14 @@ export default function ProductCard(props) {
           close={() => setModalVisible(!modalVisible)}/>
       </Modal>
 
-      {modalBuyVisible ? <Modal
+      {modalBuyVisible &&
+      (<Modal
+        style={{ margin: 0 }}
         animationType="slide"
         transparent={false}
         visible={modalBuyVisible}>
         <PayModal close={() => setModalBuyVisible(!modalBuyVisible)}/>
-      </Modal> : null}
+      </Modal>)}
 
       <View style={{flexDirection: 'row'}}>
         <View style={{
@@ -105,9 +108,12 @@ export default function ProductCard(props) {
           <Text style={styles.productCompany}>{product.company}</Text>
         </View>
       </View>
-      <View>
-        <Link to={'/partnership'}>
-          <TouchableOpacity>
+      <View style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+        <TouchableOpacity>
+          <Link to={'/partnership'}>
             <View style={[styles.futureBut, {
               width: normalize(300),
               height: normalize(40),
@@ -116,8 +122,8 @@ export default function ProductCard(props) {
             }]}>
               <Text style={styles.futureButText}>Стать партнером</Text>
             </View>
-          </TouchableOpacity>
-        </Link>
+          </Link>
+        </TouchableOpacity>
         <TouchableOpacity onPress={() => handleBuy(product, true)}>
           <View style={[styles.futureBut, {
             width: normalize(300),
@@ -128,8 +134,8 @@ export default function ProductCard(props) {
             <Text style={styles.futureButText}>Пробная версия</Text>
           </View>
         </TouchableOpacity>
-        <Link to={'/chat'}>
-          <TouchableOpacity>
+        <TouchableOpacity>
+          <Link to={'/chat'}>
             <View style={[styles.futureBut, {
               width: normalize(300),
               height: normalize(40),
@@ -138,14 +144,14 @@ export default function ProductCard(props) {
             }]}>
               <Text style={styles.futureButText}>Чат со специалистом</Text>
             </View>
-          </TouchableOpacity>
-        </Link>
-        <ToHome/>
-        <GoBack {...props} />
+         </Link>
+        </TouchableOpacity>
         <View style={{flexDirection: 'row', justifyContent: 'space-around', marginVertical: normalize(20)}}>
           {costArr}
         </View>
       </View>
+      <ToHome/>
+      <GoBack {...props} />
       <Text style={styles.productDescription}>{product.description}</Text>
       {isBought ?
         <View style={{flex: 1}}>

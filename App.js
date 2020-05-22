@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { View, SafeAreaView } from 'react-native';
 import { mapping, dark as darkTheme } from '@eva-design/eva';
 import { ApplicationProvider } from 'react-native-ui-kitten';
@@ -18,14 +18,15 @@ import Chat from './components/Screens/Chat'
 export default function App() {
 
   const [money, setMoney] = useState(50000);
-  const [competition, setCompetition] = useState('junior');
-  const localCompetition = localStorage.getItem('competition');
+  const [competition, setCompetition] = useState('');
+  // const localCompetition = localStorage.getItem('competition');
+  const localCompetition = 'junior';
   const [activeProducts, setActiveProducts] = useState([{id: 100, product: 'start container', toPay: 0, isActive: true }]);
   const [boughtProducts, setBoughtProducts] = useState([]);
 
   useEffect(() => {
     if (!localCompetition || localCompetition === '') {
-      localStorage.setItem('competition', 'junior');
+      // localStorage.setItem('competition', 'junior');
       setCompetition(localCompetition);
     }
     else {
@@ -43,29 +44,31 @@ export default function App() {
    <ApplicationProvider mapping={mapping} theme={darkTheme}>
       <MoneyContext.Provider value={{ money, setMoney, competition, setCompetition, activeProducts, setActiveProducts, boughtProducts, setBoughtProducts }}>
         <Router>
-          <SafeAreaView style={styles.appContainer}>
-            <UserPanel />
-            <View style={styles.appRouterContainer}>
-              <Switch>
-                <Route exact path="/cabinet" component={Cabinet} />
-                <Route exact path="/partnership" component={Partnership} />
+          <View style={{ flex: 1, backgroundColor: '#1D1E1F' }}>
+            <SafeAreaView style={styles.appContainer}>
+              <UserPanel />
+              <View style={styles.appRouterContainer}>
+                <Switch>
+                  <Route exact path="/cabinet" component={Cabinet} />
+                  <Route exact path="/partnership" component={Partnership} />
 
-                <Route exact path="/market" component={Market} />
-                <Route exact path="/ai" component={Market} />
-                <Route exact path="/iaas" component={Market} />
-                <Route exact path="/paas" component={Market} />
-                <Route exact path="/licenses" component={Market} />
+                  <Route exact path="/market" component={Market} />
+                  <Route exact path="/ai" component={Market} />
+                  <Route exact path="/iaas" component={Market} />
+                  <Route exact path="/paas" component={Market} />
+                  <Route exact path="/licenses" component={Market} />
 
-                <Route exact path="/marketlist" component={MarketList} />
+                  <Route exact path="/marketlist" component={MarketList} />
 
-                <Route exact path="/product/:id" component={ProductCard} />
+                  <Route exact path="/product/:id" component={ProductCard} />
 
-                <Route exact path="/chat" component={Chat} />
+                  <Route exact path="/chat" component={Chat} />
 
-                <Route component={HomeScreen} />
-              </Switch>
-            </View>
-          </SafeAreaView>
+                  <Route component={HomeScreen} />
+                </Switch>
+              </View>
+            </SafeAreaView>
+          </View>
         </Router>
       </MoneyContext.Provider>
     </ApplicationProvider>

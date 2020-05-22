@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {View, TextInput, TouchableOpacity, Text, FlatList} from 'react-native';
+import {View, TextInput, TouchableOpacity, Text, FlatList, ScrollView} from 'react-native';
 import normalize from "react-native-normalize/src/index";
 import styles from "../../styles";
 import top from '../../fakeData/top';
-import {Link} from '../../navigation/react-router';
+import {Link, useLocation} from '../../navigation/react-router';
 
 import marketCategories from '../../fakeData/market/marketCategories';
 import aiCategories from '../../fakeData/market/aiCategories';
@@ -12,7 +12,7 @@ import licensesCategories from '../../fakeData/market/licensesCategories';
 import paasCategories from '../../fakeData/market/paasCategories';
 
 import {useMoney} from '../../context/moneyContext';
-import {Modal} from '../../modal';
+import {Modal} from '../../modal/modal';
 import ModalContent from './ModalContent';
 import GoBack from '../HelpingComponents/GoBack';
 import ToHome from '../HelpingComponents/ToHome';
@@ -20,28 +20,29 @@ import HelpMiddle from '../HelpingComponents/HelpMiddle';
 
 export default function Market(props) {
   const {competition} = useMoney();
+  let location = useLocation();
   const [categories, setCategories] = useState(marketCategories);
   const [modalVisible, setModalVisible] = useState(false);
   const [modalTwo, setModalTwo] = useState(false);
   const [categoriesButtons, setCategoriesButtons] = useState(categories[competition].map((item) =>
-    <Link to={item.link}>
-      <TouchableOpacity style={styles.marketCard}>
+    <TouchableOpacity style={styles.marketCard} key={item.id}>
+      <Link to={item.link} >
         <Text style={styles.marketCardText}>{item.name}</Text>
-      </TouchableOpacity>
-    </Link>
+      </Link>
+    </TouchableOpacity>
   ));
 
 useEffect(() => {
   setCategoriesButtons(categories[competition].map((item) =>
-    <Link to={item.link}>
-      <TouchableOpacity style={styles.marketCard}>
+    <TouchableOpacity  key={item.id} style={styles.marketCard}>
+      <Link to={item.link}>
         <Text style={styles.marketCardText}>{item.name}</Text>
-      </TouchableOpacity>
-    </Link>
+      </Link>
+    </TouchableOpacity>
   ))
 }, [categories]);
   useEffect(() => {
-      switch (props.location.pathname) {
+      switch (location.pathname) {
         case ('/ai'): {
           setCategories(aiCategories);
           break;
@@ -62,34 +63,35 @@ useEffect(() => {
           setCategories(marketCategories);
         }
       }
-  }, [props.location]);
+  }, [location]);
   useEffect(() => {
     if (competition === 'junior') {
-      if (props.location.pathname === '/market') {
+      if (location.pathname === '/market') {
         setModalVisible(true);
       } else {
         setModalTwo(true);
       }
-
     }
 
-  }, [competition, props.location]);
+  }, [competition, location]);
   return (
-    <View style={{flex: 1, marginTop: normalize(7)}}>
+    <View style={{flex: 1, marginTop: normalize(30)}}>
       <Modal
+        style={{ margin: 0 }}
         animationType="slide"
         transparent={false}
         visible={modalVisible}>
         <ModalContent text="Здесь ты видишь основные категории и лучшие подборки для тебя" close={() => setModalVisible(!modalVisible)}/>
       </Modal>
       <Modal
+        style={{ margin: 0 }}
         animationType="slide"
         transparent={false}
         visible={modalTwo}>
         <ModalContent text="Здесь ты видишь подробные категории и лучшие подборки среди них" close={() => setModalTwo(!modalTwo)}/>
       </Modal>
-      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: normalize(15)}}>
-        <TextInput placeholder='Поиск...' style={{width: '80%', height: normalize(30), backgroundColor: '#fff', borderRadius: normalize(15), paddingHorizontal: normalize(15), outline: 'none'}}/>
+      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingBottom: normalize(15)}}>
+        <TextInput placeholder='Поиск...' style={{width: '80%', height: normalize(30), backgroundColor: '#fff', borderRadius: normalize(15), paddingHorizontal: normalize(15)}}/>
       </View>
       <View style={{flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
         {categoriesButtons}
@@ -102,13 +104,13 @@ useEffect(() => {
         data={top}
         keyExtractor={item => item.id}
         renderItem={(data) =>
-          <Link to={'marketlist'}>
-            <TouchableOpacity>
+          <TouchableOpacity>
+            <Link to={'/marketlist'}>
              <View style={{width: normalize(300), height: normalize(250), justifyContent: 'center', alignItems: 'center', borderWidth: normalize(8), borderColor: '#03ad79', marginVertical: normalize(40), borderRadius: normalize(10), marginRight: normalize(20)}}>
                 <Text style={styles.simpleText}>{data.item.title}</Text>
              </View>
-            </TouchableOpacity>
-          </Link>
+            </Link>
+          </TouchableOpacity>
         }
       />
         {competition === 'middle' ?  <HelpMiddle isOpen={modalVisible} setOpen={setModalVisible}/> : null }

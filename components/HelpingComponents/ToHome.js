@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import {Link} from 'react-router-dom';
+import {Link} from '../../navigation/react-router';
 import styles from '../../styles';
 
 const ToHome = () => {

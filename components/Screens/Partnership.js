@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import {Input, normalize} from 'react-native-elements';
 import styles from '../../styles';
-import TouchableOpacity from 'react-native-web/dist/exports/TouchableOpacity';
 import GoBack from '../HelpingComponents/GoBack';
 import ToHome from '../HelpingComponents/ToHome';
+import {Link} from '../../navigation/react-router';
 
 const Partnership = (props) => {
     const [name, setName] = useState('');
@@ -35,9 +35,9 @@ const Partnership = (props) => {
           style={{marginTop: normalize(20)}}
           onPress={() => console.log(name, email, need)}>
             <View style={[styles.futureBut, {width: normalize(240), height: normalize(40), alignSelf: 'center'}]}>
-                <a href={`mailto:koobi33@gmail.com?subject=Партнерство%20со%20SberCloud%20&body=${email}%20-%20${name}%20${need}`}>
+                <Link href={`mailto:koobi33@gmail.com?subject=Партнерство%20со%20SberCloud%20&body=${email}%20-%20${name}%20${need}`}>
                     <Text style={styles.futureButText}>Отправить</Text>
-                </a>
+                </Link>
             </View>
         </TouchableOpacity>
           <ToHome/>
