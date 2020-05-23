@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, FlatList} from 'react-native';
+import {View, Text, Image, FlatList, TouchableOpacity} from 'react-native';
 import marketList from "../../fakeData/market/marketList";
 import normalize from "react-native-normalize/src/index";
-import cloud from "../../assets/urban_kit/logo.svg";
+import cloud from "../../assets/urban_kit/logo.png";
 import styles from "../../styles";
 import {Link} from "../../navigation/react-router";
 import {Toggle} from 'react-native-ui-kitten';
 import {useMoney} from '../../context/moneyContext';
 import GoBack from '../HelpingComponents/GoBack';
-import TouchableOpacity from "react-native-web/dist/exports/TouchableOpacity";
-import {Modal} from "../../modal";
+import {Modal} from "../../modal/modal";
 import StatisticsModal from "../Modals/StatisticsModal";
 import StatisticBoughtModal from '../Modals/StatisticBoughtModal';
 import ToHome from '../HelpingComponents/ToHome';
@@ -33,6 +32,7 @@ export default function Cabinet(props) {
   return (
     <View style={{flex: 1, marginBottom: normalize(30)}}>
       <Modal
+        style={{ margin: 0 }}
         animationType="slide"
         transparent={false}
         visible={helpModal}>
@@ -42,6 +42,7 @@ export default function Cabinet(props) {
       </Modal>
       {modalVisible ?
         <Modal
+          style={{ margin: 0 }}
           animationType="slide"
           transparent={false}
           visible={modalVisible}>
@@ -51,6 +52,7 @@ export default function Cabinet(props) {
       }
       {modalBoughtVisible ?
         <Modal
+          style={{ margin: 0 }}
           animationType="slide"
           transparent={false}
           visible={modalBoughtVisible}>
