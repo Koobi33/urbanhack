@@ -37,7 +37,7 @@ export default function Cabinet(props) {
         transparent={false}
         visible={helpModal}>
         <ModalContent
-          text="В личном кабинете можно видеть купленные услуги, остановить их использование, а так же просмотреть статистику по размещенным вами продуктам"
+          text="In your personal account, you can see the purchased services, stop using them, and view statistics of the products you have placed"
           close={() => setHelpModalVisible(!helpModal)}/>
       </Modal>
       {modalVisible ?
@@ -60,7 +60,7 @@ export default function Cabinet(props) {
         </Modal>
         : null
       }
-      <Text style={[styles.productCompany, {marginLeft: normalize(20)}]}>Контейнеры</Text>
+      <Text style={[styles.productCompany, {marginLeft: normalize(20)}]}>Containers</Text>
       <FlatList
         data={activeProducts}
         renderItem={data => {
@@ -71,13 +71,13 @@ export default function Cabinet(props) {
             </View>
             <View style={{width: normalize(200)}}>
               <Text style={styles.productName}>{data.item.product}</Text>
-              <Text style={styles.productDescription}>{`Текущий тариф: ${data.item.toPay}₽`}</Text>
+              <Text style={styles.productDescription}>{`The current tariff: ${data.item.toPay}₽`}</Text>
             </View>
 
             <View style={{height: normalize(80), justifyContent: 'space-between'}}>
               <Link to={`/product/${data.item.id}`}>
                 <View style={[styles.futureBut, {width: normalize(70), height: normalize(40),}]}>
-                  <Text style={styles.futureButTextSmall}>Перейти</Text>
+                  <Text style={styles.futureButTextSmall}>Go over</Text>
                 </View>
               </Link>
               <Toggle checked={data.item.isActive} status='success' onChange={() => {
@@ -96,7 +96,7 @@ export default function Cabinet(props) {
           );
         }}
       />
-      <Text style={[styles.productCompany, {marginLeft: normalize(20)}]}>Покупки и подписки</Text>
+      <Text style={[styles.productCompany, {marginLeft: normalize(20)}]}>Purchases and subscriptions</Text>
       <FlatList
         data={boughtProducts}
         renderItem={data => {
@@ -107,13 +107,13 @@ export default function Cabinet(props) {
               </View>
               <View style={{width: normalize(200)}}>
                 <Text style={styles.productName}>{data.item.product}</Text>
-                <Text style={styles.productDescription}>{`Текущий тариф: ${data.item.toPay}₽`}</Text>
+                <Text style={styles.productDescription}>{`The current tariff: ${data.item.toPay}₽`}</Text>
               </View>
 
               <View style={{alignSelf: 'center'}}>
                 <Link to={`/product/${data.item.id}`}>
                   <View style={[styles.futureBut, {width: normalize(70), height: normalize(40),}]}>
-                    <Text style={styles.futureButTextSmall}>Перейти</Text>
+                    <Text style={styles.futureButTextSmall}>Go over</Text>
                   </View>
                 </Link>
               </View>
@@ -121,7 +121,7 @@ export default function Cabinet(props) {
           );
         }}
       />
-      <Text style={[styles.productCompany, {marginLeft: normalize(20)}]}>Мои предложения</Text>
+      <Text style={[styles.productCompany, {marginLeft: normalize(20)}]}>My proposals</Text>
       <FlatList
         data={marketList.slice(0, 3)}
         renderItem={data => {
@@ -149,15 +149,15 @@ export default function Cabinet(props) {
               </View>
               <View style={{width: normalize(200)}}>
                 <Text style={styles.productName}>{data.item.product}</Text>
-                <Text style={styles.productDescription}>{`Пользователей: ${23}`}</Text>
-                <Text style={styles.productDescription}>{`Доход: ${12390}₽`}</Text>
+                <Text style={styles.productDescription}>{`Users: ${23}`}</Text>
+                <Text style={styles.productDescription}>{`Income: ${12390}₽`}</Text>
               </View>
 
               <View style={{alignSelf: 'center'}}>
                 {/*<Link to={`/product/${data.item.id}`}>*/}
                   <TouchableOpacity onPress={() => setModalBoughtVisible(!modalBoughtVisible)}>
                     <View style={[styles.futureBut, {width: normalize(70), height: normalize(40),}]}>
-                      <Text style={styles.futureButTextSmall}>Перейти</Text>
+                      <Text style={styles.futureButTextSmall}>Go over</Text>
                     </View>
                   </TouchableOpacity>
                 {/*</Link>*/}

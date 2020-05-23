@@ -5,19 +5,19 @@ import government from '../assets/images/government-card-cover.jpg';
 const businessScenarios = [
   {
     id: 0,
-    name: 'Предложить услуги',
+    name: 'To offer services',
     image: business,
     link: '/business/vendor',
   },
   {
     id: 1,
-    name: 'Участие в тендерах',
+    name: 'Participation in tenders',
     image: integrator,
     link: '/business/tenders',
   },
   {
     id: 2,
-    name: 'Размещение в SberStore',
+    name: 'Placement in SberStore',
     image: government,
     link: '/business/store'
   },

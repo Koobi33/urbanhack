@@ -77,7 +77,7 @@ export default function ProductCard(props) {
         transparent={false}
         visible={modalVisible}>
         <ModalContent
-          text="Это карточка продукта. Можно выбрать тарифный план, взять пробную версию и связаться с консультантом"
+          text="This is a product card. You can choose a pricing plan, get a trial version, and contact a consultant"
           close={() => setModalVisible(!modalVisible)}/>
       </Modal>
 
@@ -120,7 +120,7 @@ export default function ProductCard(props) {
               alignSelf: 'center',
               marginTop: normalize(20)
             }]}>
-              <Text style={styles.futureButText}>Стать партнером</Text>
+              <Text style={styles.futureButText}>Become a partner</Text>
             </View>
           </Link>
         </TouchableOpacity>
@@ -131,7 +131,7 @@ export default function ProductCard(props) {
             alignSelf: 'center',
             marginTop: normalize(20)
           }]}>
-            <Text style={styles.futureButText}>Пробная версия</Text>
+            <Text style={styles.futureButText}>Trial version</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity>
@@ -142,7 +142,7 @@ export default function ProductCard(props) {
               alignSelf: 'center',
               marginTop: normalize(20)
             }]}>
-              <Text style={styles.futureButText}>Чат со специалистом</Text>
+              <Text style={styles.futureButText}>Chat with a specialist</Text>
             </View>
          </Link>
         </TouchableOpacity>

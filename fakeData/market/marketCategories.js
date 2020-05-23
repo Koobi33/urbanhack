@@ -2,25 +2,25 @@ const marketCategories = {
   junior: [
     {
       id: 0,
-      name: 'ИИ',
+      name: 'AI',
       link: 'ai'
     }
     ,
     {
       id: 1,
-      name: 'ПЛАТФОРМЫ',
+      name: 'PLATFORMS',
       link: 'paas'
     }
     ,
     {
       id: 2,
-      name: 'ЖЕЛЕЗО',
+      name: 'HARDWARE',
       link: 'iaas'
     }
     ,
     {
       id: 3,
-      name: 'ЛИЦЕНЗИИ',
+      name: 'LICENSES',
       link: 'licenses'
     }
         ],

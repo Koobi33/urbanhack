@@ -44,7 +44,7 @@ export default function HomeScreen() {
             }}>
             <Link to={'/market'}>
               <View style={[styles.futureBut, {width: normalize(240), height: normalize(40), alignSelf: 'center'}]}>
-                <Text style={styles.futureButText}>Выбрать</Text>
+                <Text style={styles.futureButText}>Choose</Text>
               </View>
             </Link>
           </TouchableOpacity>
@@ -65,7 +65,7 @@ export default function HomeScreen() {
         animationType="slide"
         transparent={false}
         visible={modalVisible}>
-        <ModalContent text="Привет, ты в SberPlace! Выбери уровень владения нашей платформой с помощью свайпа" close={() => setModalVisible(!modalVisible)}/>
+        <ModalContent text="Hello, you are in SberPlace! Choose the level of ownership of our platform using a swipe" close={() => setModalVisible(!modalVisible)}/>
       </Modal>
     <ViewPager
       // tabBarStyle={{backgroundColor: '#1D1E1F'}}

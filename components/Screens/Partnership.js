@@ -16,7 +16,7 @@ const Partnership = (props) => {
           value={name}
           inputStyle={{color: '#f6eb8c', outline: 'none'}}
           onChangeText={(text) => setName(text)}
-          placeholder='Имя'
+          placeholder='Name'
         />
         <Input
           inputStyle={{color: '#f6eb8c', outline: 'none'}}
@@ -29,14 +29,14 @@ const Partnership = (props) => {
           inputStyle={{color: '#f6eb8c', outline: 'none'}}
           value={need}
           onChangeText={(text) => setNeed(text)}
-          placeholder='Подробности'
+          placeholder='Details'
         />
         <TouchableOpacity
           style={{marginTop: normalize(20)}}
           onPress={() => console.log(name, email, need)}>
             <View style={[styles.futureBut, {width: normalize(240), height: normalize(40), alignSelf: 'center'}]}>
                 <Link href={`mailto:koobi33@gmail.com?subject=Партнерство%20со%20SberCloud%20&body=${email}%20-%20${name}%20${need}`}>
-                    <Text style={styles.futureButText}>Отправить</Text>
+                    <Text style={styles.futureButText}>Send</Text>
                 </Link>
             </View>
         </TouchableOpacity>
