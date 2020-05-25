@@ -150,8 +150,6 @@ export default function ProductCard(props) {
           {costArr}
         </View>
       </View>
-      <ToHome/>
-      <GoBack {...props} />
       <Text style={styles.productDescription}>{product.description}</Text>
       {isBought ?
         <View style={{flex: 1}}>
@@ -163,6 +161,8 @@ export default function ProductCard(props) {
           <Text style={styles.productDescription}>{product.trial}</Text>
         </View>
         : null}
+      <ToHome/>
+      <GoBack {...props} />
     </View>
   );
 }

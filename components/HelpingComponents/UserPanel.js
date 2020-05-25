@@ -19,8 +19,7 @@ const UserPanel = () => {
         <Link to={'/cabinet'}>
           <View>
             <Text style={styles.simpleTextLK}>
-              Личный
-              кабинет
+              Personal settings
             </Text>
           </View>
        </Link>

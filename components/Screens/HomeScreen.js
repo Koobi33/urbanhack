@@ -37,7 +37,7 @@ export default function HomeScreen() {
       <View  key={item.id}>
           <Text style={styles.simpleText}>{item.description}</Text>
           <TouchableOpacity
-            style={{marginTop: normalize(35)}}
+            style={{marginTop: normalize(35), alignItems: 'center', justifyContent: 'center'}}
             onPress={() => {
               // localStorage.setItem('competition', item.name);
               setCompetition(item.name);
